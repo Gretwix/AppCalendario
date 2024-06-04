@@ -24,6 +24,12 @@ public class MainGUI extends javax.swing.JFrame {
     public void listen(ActionListener controller) {
         this.MiExit.addActionListener(controller);
         this.MiActivities.addActionListener(controller);
+        this.MiUser.addActionListener(controller);
+        this.MiPrograms.addActionListener(controller);
+        this.MiReminders.addActionListener(controller);
+        this.MiReports.addActionListener(controller);
+        this.MiStudents.addActionListener(controller);
+        this.MiTeachers.addActionListener(controller);
     }
 
     /**
@@ -40,6 +46,12 @@ public class MainGUI extends javax.swing.JFrame {
         MiExit = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         MiActivities = new javax.swing.JMenuItem();
+        MiUser = new javax.swing.JMenuItem();
+        MiStudents = new javax.swing.JMenuItem();
+        MiTeachers = new javax.swing.JMenuItem();
+        MiReminders = new javax.swing.JMenuItem();
+        MiPrograms = new javax.swing.JMenuItem();
+        MiReports = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,6 +66,24 @@ public class MainGUI extends javax.swing.JFrame {
 
         MiActivities.setText("Activities");
         jMenu2.add(MiActivities);
+
+        MiUser.setText("User");
+        jMenu2.add(MiUser);
+
+        MiStudents.setText("Students");
+        jMenu2.add(MiStudents);
+
+        MiTeachers.setText("Teachers");
+        jMenu2.add(MiTeachers);
+
+        MiReminders.setText("Reminders");
+        jMenu2.add(MiReminders);
+
+        MiPrograms.setText("Programs");
+        jMenu2.add(MiPrograms);
+
+        MiReports.setText("Reports");
+        jMenu2.add(MiReports);
 
         jMenuBar1.add(jMenu2);
 
@@ -80,6 +110,12 @@ public class MainGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem MiActivities;
     private javax.swing.JMenuItem MiExit;
+    private javax.swing.JMenuItem MiPrograms;
+    private javax.swing.JMenuItem MiReminders;
+    private javax.swing.JMenuItem MiReports;
+    private javax.swing.JMenuItem MiStudents;
+    private javax.swing.JMenuItem MiTeachers;
+    private javax.swing.JMenuItem MiUser;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;

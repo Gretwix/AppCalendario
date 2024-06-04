@@ -26,6 +26,36 @@
                 <Property name="text" type="java.lang.String" value="Activities"/>
               </Properties>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MiUser">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="User"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MiStudents">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Students"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MiTeachers">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Teachers"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MiReminders">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Reminders"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MiPrograms">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Programs"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MiReports">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Reports"/>
+              </Properties>
+            </MenuItem>
           </SubComponents>
         </Menu>
       </SubComponents>
