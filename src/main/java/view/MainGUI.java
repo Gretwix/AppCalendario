@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
+import java.awt.event.ActionListener;
 /**
  *
  * @author alehe
@@ -15,8 +15,12 @@ public class MainGUI extends javax.swing.JFrame {
      */
     public MainGUI() {
          initComponents();
-        this.setResizable(true);
+        this.setResizable(false);
         this.setLocationRelativeTo(null);
+    }
+    public void listen(ActionListener controller){
+        this.MiExit.addActionListener(controller);
+        this.MiActivities.addActionListener (controller);
     }
 
     /**
@@ -30,14 +34,24 @@ public class MainGUI extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        MiExit = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        MiActivities = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jMenu1.setText("File");
+
+        MiExit.setText("Exit");
+        jMenu1.add(MiExit);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Menu");
+
+        MiActivities.setText("Activities");
+        jMenu2.add(MiActivities);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -62,6 +76,8 @@ public class MainGUI extends javax.swing.JFrame {
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem MiActivities;
+    private javax.swing.JMenuItem MiExit;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
