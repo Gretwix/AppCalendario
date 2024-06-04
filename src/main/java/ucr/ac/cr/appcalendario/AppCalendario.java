@@ -12,6 +12,6 @@ package ucr.ac.cr.appcalendario;
 public class AppCalendario {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!SUI");
+        System.out.println("Hello World!SUII");
     }
 }
