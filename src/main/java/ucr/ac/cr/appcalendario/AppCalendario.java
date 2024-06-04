@@ -4,6 +4,7 @@
  */
 
 package ucr.ac.cr.appcalendario;
+import controller.MainController;
 
 /**
  *
@@ -13,5 +14,7 @@ public class AppCalendario {
 
     public static void main(String[] args) {
         System.out.println("Hello World!SUII");
+        MainController mainController = new MainController();
+        
     }
 }
