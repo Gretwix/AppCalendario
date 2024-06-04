@@ -12,16 +12,16 @@ import java.awt.event.ActionEvent;
  *
  * @author alehe
  */
-public class MainController implements ActionListener{
-
+public class MainController implements ActionListener {
+    
     private MainGUI mainGUI;
-
-    public MainController() {     
+    
+    public MainController() {        
         this.mainGUI = new MainGUI();
         this.mainGUI.setVisible(true);
         this.mainGUI.listen(this);
     }
-
+    
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             

@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+
 import java.awt.event.ActionListener;
+
 /**
  *
  * @author alehe
@@ -14,13 +16,14 @@ public class MainGUI extends javax.swing.JFrame {
      * Creates new form MainGUI
      */
     public MainGUI() {
-         initComponents();
+        initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
     }
-    public void listen(ActionListener controller){
+
+    public void listen(ActionListener controller) {
         this.MiExit.addActionListener(controller);
-        this.MiActivities.addActionListener (controller);
+        this.MiActivities.addActionListener(controller);
     }
 
     /**
@@ -73,7 +76,6 @@ public class MainGUI extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem MiActivities;
