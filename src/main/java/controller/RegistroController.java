@@ -9,19 +9,19 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
-import view.registroGUI;
+import view.RegistroGUI;
 
 /**
  *
  * @author Jeikol
  */
 public class RegistroController implements ActionListener {
-    private registroGUI registroGUI;
+    private RegistroGUI registroGUI;
     private ArrayList<Usuario> listaUsuarios;
 
     public RegistroController(ArrayList<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
-        this.registroGUI = new registroGUI();
+        this.registroGUI = new RegistroGUI();
         this.registroGUI.setVisible(true);
         this.registroGUI.addJoinButtonListener(this);
     }

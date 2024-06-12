@@ -9,19 +9,19 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
-import view.loginGUI;
+import view.LoginGUI;
 
 /**
  *
  * @author Jeikol
  */
 public class LoginController implements ActionListener {
-    private loginGUI loginGUI;
+    private LoginGUI loginGUI;
     private ArrayList<Usuario> listaUsuarios;
 
     public LoginController(ArrayList<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
-        this.loginGUI = new loginGUI();
+        this.loginGUI = new LoginGUI();
         this.loginGUI.setVisible(true);
         this.loginGUI.addJoinButtonListener(this);
     }

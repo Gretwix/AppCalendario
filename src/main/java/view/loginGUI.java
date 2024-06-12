@@ -10,12 +10,12 @@ import java.awt.event.ActionListener;
  *
  * @author Jeikol
  */
-public class loginGUI extends javax.swing.JFrame {
+public class LoginGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form loginGUI
      */
-   public loginGUI() {
+   public LoginGUI() {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
