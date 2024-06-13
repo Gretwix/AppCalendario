@@ -15,6 +15,8 @@ import java.awt.event.ActionEvent;
 public class MainController implements ActionListener {
 
     private MainGUI mainGUI;
+    private ActivitiesController activitiesController;
+    private RemindersController remindersController;
 
     public MainController() {
         this.mainGUI = new MainGUI();
@@ -26,7 +28,7 @@ public class MainController implements ActionListener {
         switch (e.getActionCommand()) {
 
             case "Activities":
-                System.out.println("Activities");
+                this.activitiesController=new ActivitiesController();
                 break;
             case "User":
                 System.out.println("User");
@@ -38,7 +40,7 @@ public class MainController implements ActionListener {
                 System.out.println("Teachers");
                 break;
             case "Reminders":
-                System.out.println("Reminders");
+                this.remindersController= new RemindersController();
                 break;
             case "Programs":
                 System.out.println("Programs");
