@@ -10,12 +10,12 @@ import java.awt.event.ActionListener;
  *
  * @author Jeikol
  */
-public class RegistroGUI extends javax.swing.JFrame {
+public class registroGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form registroGUI
      */
-    public RegistroGUI() {
+    public registroGUI() {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);

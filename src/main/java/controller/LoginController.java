@@ -9,19 +9,19 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
-import view.LoginGUI;
+import view.loginGUI;
 
 /**
  *
  * @author Jeikol
  */
 public class LoginController implements ActionListener {
-    private LoginGUI loginGUI;
+    private loginGUI loginGUI;
     private ArrayList<Usuario> listaUsuarios;
 
     public LoginController(ArrayList<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
-        this.loginGUI = new LoginGUI();
+        this.loginGUI = new loginGUI();
         this.loginGUI.setVisible(true);
         this.loginGUI.addJoinButtonListener(this);
     }
@@ -34,7 +34,7 @@ public class LoginController implements ActionListener {
             String contraseña = loginGUI.getPassword();
 
             // Verificar las credenciales
-            boolean credencialesValidas = false;
+            boolean credencialesValidas = true;
             for (Usuario usuario : listaUsuarios) {
     if ((usuario.getEmail().equals(user) || usuario.getNombre().equals(user)) && usuario.getContraseña().equalsIgnoreCase(contraseña))  {
         credencialesValidas = true;
