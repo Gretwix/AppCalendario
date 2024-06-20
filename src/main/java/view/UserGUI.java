@@ -16,6 +16,9 @@ public class UserGUI extends javax.swing.JFrame {
     public UserGUI() {
         initComponents();
     }
+     public ButtonsPanel getButtonPanel(){
+        return this.buttonsPanel2;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

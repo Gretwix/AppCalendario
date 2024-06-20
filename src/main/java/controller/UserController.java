@@ -5,6 +5,7 @@
 package controller;
 import view.UserGUI;
 import modelo.User;
+import view.ButtonPanel;
 /**
  *
  * @author alehe
@@ -12,12 +13,13 @@ import modelo.User;
 public class UserController {
     private UserGUI userGUI;
     private User user;
+    private ButtonPanel buttonPanel;
     
     
     public UserController(UserGUI userGUI) {
         this.userGUI = new UserGUI();
         //this.dataCustomerPanel = this.customerGUI.getDataCustomerPanel();
-        //this.buttonPanel = this.userGUI.getButtonPanel();
+        this.buttonPanel = this.userGUI.getButtonPanel();
         //this.buttonPanel.listen(this);
         //this.dataCustomerPanel.listen(this);
         this.userGUI.setVisible(true);
