@@ -8,6 +8,6 @@ package controller;
  *
  * @author alehe
  */
-public class TeachersController {
+public class ReportController {
     
 }

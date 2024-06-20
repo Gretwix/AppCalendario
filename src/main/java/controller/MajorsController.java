@@ -6,8 +6,8 @@ package controller;
 
 /**
  *
- * @author alehe
+ * @author UCR
  */
-public class ReportsController {
+public class MajorsController {
     
 }

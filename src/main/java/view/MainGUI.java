@@ -27,6 +27,7 @@ public class MainGUI extends javax.swing.JFrame {
         this.MiUser.addActionListener(controller);
         this.MiMajors.addActionListener(controller);
         this.MiCourses.addActionListener(controller);
+        this.MiReport.addActionListener(controller);
     }
 
     /**
@@ -46,6 +47,7 @@ public class MainGUI extends javax.swing.JFrame {
         MiCourses = new javax.swing.JMenuItem();
         MiMajors = new javax.swing.JMenuItem();
         MiPlan = new javax.swing.JMenuItem();
+        MiReport = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,6 +71,9 @@ public class MainGUI extends javax.swing.JFrame {
 
         MiPlan.setText("Degree plan");
         jMenu2.add(MiPlan);
+
+        MiReport.setText("Report");
+        jMenu2.add(MiReport);
 
         jMenuBar1.add(jMenu2);
 
@@ -97,6 +102,7 @@ public class MainGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem MiExit;
     private javax.swing.JMenuItem MiMajors;
     private javax.swing.JMenuItem MiPlan;
+    private javax.swing.JMenuItem MiReport;
     private javax.swing.JMenuItem MiUser;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
