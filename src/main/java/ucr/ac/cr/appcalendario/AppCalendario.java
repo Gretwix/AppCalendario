@@ -7,7 +7,7 @@ package ucr.ac.cr.appcalendario;
 import controller.LoginController;
 import controller.MainController;
 import java.util.ArrayList;
-import modelo.Usuario;
+import modelo.User;
 
 /**
  *
@@ -17,7 +17,7 @@ public class AppCalendario {
 
     public static void main(String[] args) {
          // Crea un ArrayList para almacenar los usuarios registrados
-        ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+        ArrayList<User> listaUsuarios = new ArrayList<>();
 
         // Pasa el ArrayList a LoginController
         LoginController loginController = new LoginController(listaUsuarios);

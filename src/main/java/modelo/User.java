@@ -8,14 +8,14 @@ package modelo;
  *
  * @author Jeikol
  */
-public class Usuario {
+public class User {
     private String nombre;
     private String apellido;
     private String email;
     private String contraseña;
     private String tipoUsuario;
 
-    public Usuario(String nombre, String apellido, String email, String contraseña, String tipoUsuario) {
+    public User(String nombre, String apellido, String email, String contraseña, String tipoUsuario) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;

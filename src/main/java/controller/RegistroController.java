@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import modelo.Usuario;
+import modelo.User;
 import view.registroGUI;
 
 /**
@@ -17,9 +17,9 @@ import view.registroGUI;
  */
 public class RegistroController implements ActionListener {
     private registroGUI registroGUI;
-    private ArrayList<Usuario> listaUsuarios;
+    private ArrayList<User> listaUsuarios;
 
-    public RegistroController(ArrayList<Usuario> listaUsuarios) {
+    public RegistroController(ArrayList<User> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
         this.registroGUI = new registroGUI();
         this.registroGUI.setVisible(true);
@@ -37,7 +37,7 @@ public class RegistroController implements ActionListener {
 
             // Verificar si el usuario ya está registrado
             boolean usuarioExiste = false;
-            for (Usuario usuario : listaUsuarios) {
+            for (User usuario : listaUsuarios) {
                 if (usuario.getEmail().equals(email)) {
                     usuarioExiste = true;
                     break;
@@ -48,7 +48,7 @@ public class RegistroController implements ActionListener {
                 JOptionPane.showMessageDialog(registroGUI, "El usuario ya está registrado", "Error", JOptionPane.ERROR_MESSAGE);
             } else {
                 // Agregar el nuevo usuario a la lista
-                Usuario nuevoUsuario = new Usuario(nombre, apellido, email, contraseña, tipoUsuario);
+                User nuevoUsuario = new User(nombre, apellido, email, contraseña, tipoUsuario);
                 listaUsuarios.add(nuevoUsuario);
                 JOptionPane.showMessageDialog(registroGUI, "Registro exitoso", "Éxito", JOptionPane.INFORMATION_MESSAGE);
                 registroGUI.dispose();
