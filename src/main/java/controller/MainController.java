@@ -27,26 +27,17 @@ public class MainController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
 
-            case "Activities":
-                this.activitiesController=new ActivitiesController();
+            case "Degree plan":
+                System.out.println("Plan");
                 break;
             case "User":
                 System.out.println("User");
                 break;
-            case "Students":
-                System.out.println("Students");
+            case "Majors":
+                System.out.println("Majors");
                 break;
-            case "Teachers":
-                System.out.println("Teachers");
-                break;
-            case "Reminders":
-                this.remindersController= new RemindersController();
-                break;
-            case "Programs":
-                System.out.println("Programs");
-                break;
-            case "Reports":
-                System.out.println("Reports");
+            case "Courses":
+                System.out.println("Courses");
                 break;
             case "Exit":
                 System.exit(0);

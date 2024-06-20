@@ -21,39 +21,24 @@
             <Property name="text" type="java.lang.String" value="Menu"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="MiActivities">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Activities"/>
-              </Properties>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="MiUser">
               <Properties>
                 <Property name="text" type="java.lang.String" value="User"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MiStudents">
+            <MenuItem class="javax.swing.JMenuItem" name="MiCourses">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Students"/>
+                <Property name="text" type="java.lang.String" value="Courses"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MiTeachers">
+            <MenuItem class="javax.swing.JMenuItem" name="MiMajors">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Teachers"/>
+                <Property name="text" type="java.lang.String" value="Majors"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MiReminders">
+            <MenuItem class="javax.swing.JMenuItem" name="MiPlan">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Reminders"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MiPrograms">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Programs"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MiReports">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Reports"/>
+                <Property name="text" type="java.lang.String" value="Degree plan"/>
               </Properties>
             </MenuItem>
           </SubComponents>
