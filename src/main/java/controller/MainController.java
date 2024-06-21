@@ -11,6 +11,14 @@ import controller.UserController;
 import modelo.Users;
 import view.MainGUI;
 import view.UserGUI;
+import controller.CoursesController;
+import view.CoursesGUI;
+import view.MajorsGUI;
+import modelo.Majors;
+import controller.MajorsController;
+import view.PlanGUI;
+import modelo.Plan;
+import controller.PlanController;
 
 /**
  *
@@ -22,18 +30,28 @@ public class MainController implements ActionListener {
     private UserController userController;
     private UserGUI userGUI;
     private Users users;
-
+    private CoursesController coursesController;
+    private CoursesGUI coursesGUI;
+    private MajorsGUI majorsGUI;
+    private MajorsController majorsController;
+    private PlanController planController;
+    private PlanGUI planGUI;
+    
     public MainController() {
         this.mainGUI = new MainGUI();
         this.mainGUI.setVisible(true);
         this.mainGUI.listen(this);
         UserGUI userGUI = new UserGUI();
+        CoursesGUI coursesGUI = new CoursesGUI();
+        MajorsGUI majorsGUI = new MajorsGUI();
+        PlanGUI planGUI = new PlanGUI();
     }
 
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
 
             case "Degree plan":
+                this.planController = new PlanController(planGUI);
                 System.out.println("Degree Plan");
                 break;
             case "User":
@@ -42,9 +60,11 @@ public class MainController implements ActionListener {
                 System.out.println("User");
                 break;
             case "Majors":
+                this.majorsController = new MajorsController (majorsGUI);
                 System.out.println("Majors");
                 break;
             case "Courses":
+                this.coursesController = new CoursesController (coursesGUI);
                 System.out.println("Courses");
                 break;
             case "Report":

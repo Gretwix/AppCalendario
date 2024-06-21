@@ -5,6 +5,7 @@
 package view;
 import controller.MainController;
 import controller.UserController;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.Users;
 /**
@@ -35,7 +36,7 @@ public String getTextIdNumber(){
     }
     
     public void setUsers(Users users){
-        this.txtName.setText("Alejandro");
+        this.txtName.setText(users.getName());
         this.txtEmail.setText(users.getEmail());
         this.txtNumber.setText(users.getNumber());
         this.txtCarnet.setText(users.getCarnet());

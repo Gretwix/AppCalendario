@@ -7,27 +7,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import view.UserGUI;
-import modelo.User;
-import modelo.Users;
+import view.CoursesGUI;
+import modelo.Courses;
 import view.ButtonPanel;
 /**
  *
  * @author alehe
  */
-public class UserController implements ActionListener, MouseListener{
-    private UserGUI userGUI;
-    private User user;
+public class CoursesController implements ActionListener, MouseListener{
+    private CoursesGUI coursesGUI;
+    private Courses courses;
     private ButtonPanel buttonPanel;
-     private Users users;
     
-    public UserController(UserGUI userGUI) {
-       this.userGUI = new UserGUI();
-     
-        this.buttonPanel = this.userGUI.getButtonPanel();
-        this.buttonPanel.listen(this);
+    public CoursesController(CoursesGUI coursesGUI) {
+       this.coursesGUI = new CoursesGUI();
         
-        this.userGUI.setVisible(true);
+        this.buttonPanel = this.coursesGUI.getButtonPanel();
+        this.buttonPanel.listen(this);
+
+        this.coursesGUI.setVisible(true);
     }
 public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
@@ -41,12 +39,12 @@ public void actionPerformed(ActionEvent e) {
                 break;
             case "Consult":
             {
-                this.userGUI.setUsers(users);
+                
             }
                 break;
 
             case "Exit":
-                this.userGUI.dispose();
+                this.coursesGUI.dispose();
                 break;
         }
     }
