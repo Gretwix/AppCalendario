@@ -3,12 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
+import controller.MainController;
+import controller.UserController;
 /**
  *
  * @author UCR
  */
 public class UserGUI extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form UserGUI
@@ -16,9 +18,9 @@ public class UserGUI extends javax.swing.JFrame {
     public UserGUI() {
         initComponents();
     }
-     public ButtonsPanel getButtonPanel(){
-        return this.buttonsPanel2;
-    }
+     public ButtonPanel getButtonPanel(){
+     return buttonPanel1;
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.
