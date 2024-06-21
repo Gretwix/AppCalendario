@@ -5,6 +5,8 @@
 package view;
 import controller.MainController;
 import controller.UserController;
+import java.awt.event.ActionListener;
+import modelo.Users;
 /**
  *
  * @author UCR
@@ -21,7 +23,32 @@ public class UserGUI extends javax.swing.JFrame {
      public ButtonPanel getButtonPanel(){
      return buttonPanel1;
      }
-
+public String getTextIdNumber(){
+        return null;
+    }
+    
+    public Users getUsers(){
+        return new Users(this.txtName.getText(), 
+                this.txtEmail.getText(),
+                this.txtCarnet.getText(),
+                this.txtNumber.getText());
+    }
+    
+    public void setUsers(Users users){
+        this.txtName.setText("Alejandro");
+        this.txtEmail.setText(users.getEmail());
+        this.txtNumber.setText(users.getNumber());
+        this.txtCarnet.setText(users.getCarnet());
+    }
+    
+    public void clean(){
+        this.txtName.setText("");
+        this.txtCarnet.setText("");
+        this.txtEmail.setText("");
+        this.txtNumber.setText("");
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -8,6 +8,7 @@ import view.MainGUI;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import controller.UserController;
+import modelo.Users;
 import view.MainGUI;
 import view.UserGUI;
 
@@ -20,6 +21,7 @@ public class MainController implements ActionListener {
     private MainGUI mainGUI;
     private UserController userController;
     private UserGUI userGUI;
+    private Users users;
 
     public MainController() {
         this.mainGUI = new MainGUI();

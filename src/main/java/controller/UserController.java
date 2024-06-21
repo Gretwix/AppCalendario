@@ -29,11 +29,26 @@ public class UserController implements ActionListener, MouseListener{
         this.userGUI.setVisible(true);
         
     }
+public void actionPerformed(ActionEvent e) {
+        switch (e.getActionCommand()) {
+            case "Create":
+                
+                break;
+            case "Modify":
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                
+
+                break;
+            case "Consult":
+                
+                break;
+            case "Exit":
+                this.userGUI.dispose();
+                break;
+        }
     }
+    
+   
 
     @Override
     public void mouseClicked(MouseEvent e) {
