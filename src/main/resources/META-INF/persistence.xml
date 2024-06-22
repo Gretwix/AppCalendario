@@ -4,6 +4,7 @@
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <class>modelo.Courses</class>
     <class>modelo.Majors</class>
+    <class>modelo.Users</class>
     <class>modelo.Plan</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mydb?serverTimezone=UTC"/>
