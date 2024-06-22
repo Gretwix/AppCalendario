@@ -9,7 +9,9 @@ package modelo;
  * @author alehe
  */
 public class Plan {
+   
     private String valid;
+    
     private String description;
     private String credits;
     private String approval;
