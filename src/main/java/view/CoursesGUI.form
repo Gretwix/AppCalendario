@@ -36,16 +36,18 @@
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtName" min="-2" pref="198" max="-2" attributes="0"/>
+                          <Component id="txtAcronyms" min="-2" pref="198" max="-2" attributes="0"/>
                           <Component id="txtClas" alignment="0" min="-2" pref="198" max="-2" attributes="0"/>
                           <Component id="txtWork" min="-2" pref="198" max="-2" attributes="0"/>
                           <Component id="txtCredits" alignment="0" min="-2" pref="198" max="-2" attributes="0"/>
                           <Component id="txtBlock" alignment="0" min="-2" pref="198" max="-2" attributes="0"/>
                           <Component id="txtModality" min="-2" pref="198" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtName" min="-2" pref="198" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -58,8 +60,13 @@
           <Group type="102" alignment="1" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtAcronyms" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -106,7 +113,7 @@
                       <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="buttonPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
           </Group>
@@ -123,10 +130,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Course Name:"/>
+        <Property name="text" type="java.lang.String" value="Acronyms:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtName">
+    <Component class="javax.swing.JTextField" name="txtAcronyms">
     </Component>
     <Component class="javax.swing.JTextField" name="txtClas">
     </Component>
@@ -178,5 +185,12 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="jLabel8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Course Name:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtName">
+    </Component>
   </SubComponents>
 </Form>

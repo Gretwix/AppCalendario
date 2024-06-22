@@ -4,9 +4,11 @@
  */
 package ucr.ac.cr.appcalendario;
 
+import controller.CoursesJpaController;
 import controller.LoginController;
 import controller.MainController;
 import java.util.ArrayList;
+import modelo.Courses;
 import modelo.User;
 
 /**
@@ -17,11 +19,20 @@ public class AppCalendario {
 
     public static void main(String[] args) {
          // Crea un ArrayList para almacenar los usuarios registrados
-        ArrayList<User> listaUsuarios = new ArrayList<>();
+       // ArrayList<User> listaUsuarios = new ArrayList<>();
 
         // Pasa el ArrayList a LoginController
-        LoginController loginController = new LoginController(listaUsuarios);
-        
+        //LoginController loginController = new LoginController(listaUsuarios);
+        try {
+            CoursesJpaController coursesJPA = new CoursesJpaController();
+            coursesJPA.create(new Courses(
+                "J", "sqsq", 2, 3, 2, "J", "P", "DSSSD"
+            ));
+            System.out.print("agg exitosos");
+        } catch (Exception ex) {
+            System.err.println("Error al agregar.");
+            ex.printStackTrace(); // Imprime la pila de la excepción
+        }
 
     }
 }

@@ -4,28 +4,58 @@
  */
 package modelo;
 
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author alehe
  */
-public class Courses {
-   private String name;
-    private String credits;
-    private String work;
-    private String clas;
+@Entity
+@Table(name = "curso")
+public class Courses implements Serializable{
+    private static final long serialVersionUID = 1L;
+    
+   @Id
+   @Column(name = "sigla")
+    private String acronnyms;
+    @Column(name = "nombre")
+    private String name;
+    @Column(name = "cantidad_creditos")
+    private int credits;
+    @Column(name = "horas_laborales")
+    private int work;
+    @Column(name = "horas_lectivas")
+    private int clas;
+    @Column(name = "bloque")
     private String block;
+    @Column(name = "modalidad")
     private String modality;
+    @Column(name = "descripcion")
     private String description;
 
-    public Courses(String name, String credits, String work, String clas, String block, String modality, String description) {
+    public Courses(String acronnyms, String name, int credits, int work, int clas, String block, String modality, String description) {
+        this.acronnyms = acronnyms;
         this.name = name;
         this.credits = credits;
-        this.modality = modality;
-        this.description = description;
-        this.block = block;
         this.work = work;
         this.clas = clas;
-    } 
+        this.block = block;
+        this.modality = modality;
+        this.description = description;
+    }
+
+    public String getAcronnyms() {
+        return acronnyms;
+    }
+
+    public void setAcronnyms(String acronnyms) {
+        this.acronnyms = acronnyms;
+    }
 
     public String getName() {
         return name;
@@ -35,27 +65,27 @@ public class Courses {
         this.name = name;
     }
 
-    public String getCredits() {
+    public int getCredits() {
         return credits;
     }
 
-    public void setCredits(String credits) {
+    public void setCredits(int credits) {
         this.credits = credits;
     }
 
-    public String getWork() {
+    public int getWork() {
         return work;
     }
 
-    public void setWork(String work) {
+    public void setWork(int work) {
         this.work = work;
     }
 
-    public String getClas() {
+    public int getClas() {
         return clas;
     }
 
-    public void setClas(String clas) {
+    public void setClas(int clas) {
         this.clas = clas;
     }
 
@@ -82,5 +112,14 @@ public class Courses {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
+
+    @Override
+    public String toString() {
+        return "Courses{" + "acronnyms=" + acronnyms + ", name=" + name + ", credits=" + credits + ", work=" + work + ", clas=" + clas + ", block=" + block + ", modality=" + modality + ", description=" + description + '}';
+    }
     
 }
+
+   
