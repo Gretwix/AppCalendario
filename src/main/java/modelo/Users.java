@@ -4,21 +4,57 @@
  */
 package modelo;
 
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author alehe
  */
-public class Users {
+@Entity
+@Table(name = "usuario")
+public class Users implements Serializable {
+    @Id
+    @Column(name = "id")
+    private int id;
+    @Column(name = "nombre")
     private String name;
-    private String email;
-    private String carnet;
+    @Column(name = "telefono")
     private String number;
+    @Column(name = "apellidos")
+    private String lastName;
+    @Column(name = "correo")
+    private String email;
+    @Column(name = "nombre_usuario")
+    private String userName;
+     @Column(name = "contrase\u00f1a")
+    private String password;
+     @Column(name = "carnet")
+    private String carnet;
 
-    public Users(String name, String email, String carnet, String number) {
+    public Users(int id, String name, String number, String lastName, String email, String userName, String password, String carnet) {
+        this.id = id;
         this.name = name;
-        this.carnet = carnet;
         this.number = number;
+        this.lastName = lastName;
         this.email = email;
+        this.userName = userName;
+        this.password = password;
+        this.carnet = carnet;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -26,7 +62,23 @@ public class Users {
     }
 
     public void setName(String name) {
-        this.name = "Alejandro";
+        this.name = name;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -37,6 +89,22 @@ public class Users {
         this.email = email;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getCarnet() {
         return carnet;
     }
@@ -45,12 +113,11 @@ public class Users {
         this.carnet = carnet;
     }
 
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
+    @Override
+    public String toString() {
+        return "Users{" + "id=" + id + ", name=" + name + ", number=" + number + ", lastName=" + lastName + ", email=" + email + ", userName=" + userName + ", password=" + password + ", carnet=" + carnet + '}';
     }
     
+
+   
 }
