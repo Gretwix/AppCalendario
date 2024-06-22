@@ -8,9 +8,11 @@ import controller.CoursesJpaController;
 import controller.LoginController;
 import controller.MainController;
 import controller.MajorsJpaController;
+import controller.PlanJpaController;
 import java.util.ArrayList;
 import modelo.Courses;
 import modelo.Majors;
+import modelo.Plan;
 import modelo.User;
 
 /**
@@ -26,9 +28,9 @@ public class AppCalendario {
         // Pasa el ArrayList a LoginController
         //LoginController loginController = new LoginController(listaUsuarios);
         try {
-            MajorsJpaController majorsJPA = new MajorsJpaController();
-            majorsJPA.create(new Majors(
-                "fgf", "sqsq", "J", "P", "DSSSD"
+            PlanJpaController planJPA = new PlanJpaController();
+            planJPA.create(new Plan(
+                1, 2, "J", 4, 4
             ));
             System.out.print("agg exitosos");
         } catch (Exception ex) {
