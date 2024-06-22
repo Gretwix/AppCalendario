@@ -4,30 +4,63 @@
  */
 package modelo;
 
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 /**
  *
  * @author alehe
  */
-public class Plan {
-   
-    private String valid;
-    
-    private String description;
-    private String credits;
-    private String approval;
 
-    public Plan(String valid, String description, String credits, String approval) {
+//Se necesita implementarlo con Date pero no pude fecha aprovacion y fecha vigor, si no no se pueden editar los cambios 
+@Entity
+@Table(name = "plan de estudios")
+public class Plan implements Serializable {
+   private static final long serialVersionUID = 1L;
+    @Id
+    @Column(name = "id")
+   private int id; 
+   @Column(name = "fecha_vigor")
+   private int valid;
+   @Column(name = "descripcion")
+   private String description;
+   @Column(name = "cantidad_creditos")
+   private int credits;
+   @Column(name = "fecha_aprobacion")
+   private int approval;
+
+    public Plan(int id, int valid, String description, int credits, int approval) {
+        
+    }
+
+    public Plan(Integer id, int valid, String description, int credits, int approval) {
+        this.id = id;
         this.valid = valid;
-        this.credits = credits;
         this.description = description;
+        this.credits = credits;
         this.approval = approval;
     }
 
-    public String getValid() {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public int getValid() {
         return valid;
     }
 
-    public void setValid(String valid) {
+    public void setValid(int valid) {
         this.valid = valid;
     }
 
@@ -39,20 +72,25 @@ public class Plan {
         this.description = description;
     }
 
-    public String getCredits() {
+    public int getCredits() {
         return credits;
     }
 
-    public void setCredits(String credits) {
+    public void setCredits(int credits) {
         this.credits = credits;
     }
 
-    public String getApproval() {
+    public int getApproval() {
         return approval;
     }
 
-    public void setApproval(String approval) {
+    public void setApproval(int approval) {
         this.approval = approval;
     }
+
+    @Override
+    public String toString() {
+        return "Plan{" + "id=" + id + ", valid=" + valid + ", description=" + description + ", credits=" + credits + ", approval=" + approval + '}';
+    }
     
-}
+    }
