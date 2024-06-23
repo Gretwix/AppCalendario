@@ -30,8 +30,9 @@ public class MajorsGUI extends javax.swing.JFrame {
     }
     
     public Majors getMajors(){
-        return new Majors(this.txtName.getText(),
+        return new Majors(
                 this.txtCode.getText(), 
+                this.txtName.getText(),
                 this.txaDescrpition.getText(),
                 this.txaMarket.getText(),
                 this.txaProfile.getText());

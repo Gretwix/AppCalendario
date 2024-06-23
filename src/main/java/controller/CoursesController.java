@@ -42,7 +42,7 @@ public void actionPerformed(ActionEvent e) {
                         System.err.println("Error al agregar.");
                         ex.printStackTrace(); 
                     }
-                }else{System.err.println("No dejar nungun espacio en blanco");
+                }else{System.err.println("No dejar ningun espacio en blanco");
                 }
             }
                 break;
