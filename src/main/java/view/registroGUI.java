@@ -20,8 +20,6 @@ public class registroGUI extends javax.swing.JFrame {
           initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-         
-        this.setVisible(true);
     }
 
     public void addJoinButtonListener(ActionListener listener) {
@@ -48,6 +46,9 @@ public class registroGUI extends javax.swing.JFrame {
     return txtNumber.getText();
 }
 
+     public String getId() {
+    return txtId.getText();
+}
     public String getPassword() {
         return new String(jpPassword.getPassword()); // Obtener la contraseña como String
     }
@@ -58,23 +59,9 @@ public class registroGUI extends javax.swing.JFrame {
 
    public javax.swing.JButton getBtnRegistrarse() {
         return btnRegistrarse;
-        
     }
-   public void setIdLabel(String id) {
-        txtId.setText(id); // Configurar el texto del JLabel con el ID
-    }
-
     
-    public void setUsers(Users users) {
-        this.txtId.setText(String.valueOf(users.getId())); // Configurar el campo de ID automáticamente
-        this.txtName.setText(users.getName());
-        this.txtNumber.setText(users.getNumber());
-        this.txtLastname.setText(users.getLastName());
-        this.txtEmail.setText(users.getEmail());
-        this.txtUsername.setText(users.getUserName());
-        this.jpPassword.setText(users.getPassword());
-        this.txtCarnet.setText(users.getCarnet());
-    }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -94,7 +81,7 @@ public class registroGUI extends javax.swing.JFrame {
         txtUsername = new javax.swing.JTextField();
         btnRegistrarse = new javax.swing.JButton();
         jpPassword = new javax.swing.JPasswordField();
-        txtId = new javax.swing.JLabel();
+        txtId = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -141,17 +128,18 @@ public class registroGUI extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(txtLastname, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jpPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)))))
+                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
+                        .addContainerGap()
+                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jpPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
                         .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,17 +152,17 @@ public class registroGUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEmail)
                     .addComponent(txtNumber))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCarnet)
-                    .addComponent(txtId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtId)
+                    .addComponent(txtCarnet))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtUsername)
                     .addComponent(jpPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(69, 69, 69)
+                .addGap(18, 18, 18)
                 .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -182,16 +170,16 @@ public class registroGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(44, 44, 44)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
@@ -212,7 +200,7 @@ public class registroGUI extends javax.swing.JFrame {
     private javax.swing.JPasswordField jpPassword;
     private javax.swing.JTextField txtCarnet;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JLabel txtId;
+    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtLastname;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtNumber;
