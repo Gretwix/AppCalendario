@@ -19,7 +19,7 @@ public class RegistroController implements ActionListener {
     private registroGUI registroGUI;
     private ArrayList<User> listaUsuarios;
 
-    public RegistroController(ArrayList<User> listaUsuarios) {
+    public RegistroController() {
         this.listaUsuarios = listaUsuarios;
         this.registroGUI = new registroGUI();
         this.registroGUI.setVisible(true);

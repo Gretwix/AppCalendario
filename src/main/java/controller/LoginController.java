@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.User;
+import modelo.Users;
 import view.loginGUI;
 
 /**
@@ -17,40 +18,39 @@ import view.loginGUI;
  */
 public class LoginController implements ActionListener {
     private loginGUI loginGUI;
-    private ArrayList<User> listaUsuarios;
+    private UsersJpaController usersController;
 
-    public LoginController(ArrayList<User> listaUsuarios) {
-        this.listaUsuarios = listaUsuarios;
+    public LoginController() {
+        this.usersController = new UsersJpaController();
         this.loginGUI = new loginGUI();
         this.loginGUI.setVisible(true);
-        this.loginGUI.addJoinButtonListener(this);
+        this.loginGUI.addJoinButtonListener(this); // Asigna este mismo controlador como listener del botón
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
         if (e.getActionCommand().equals("Iniciar sesion")) {
-            String user = loginGUI.getUsername();
-            String contraseña = loginGUI.getPassword();
+            String username = loginGUI.getUsername();
+            String password = loginGUI.getPassword();
 
-            // Verificar las credenciales
-            boolean credencialesValidas = true;
-            for (User usuario : listaUsuarios) {
-    if ((usuario.getEmail().equals(user) || usuario.getNombre().equals(user)) && usuario.getContraseña().equalsIgnoreCase(contraseña))  {
-        credencialesValidas = true;
-        break;
+            try {
+                Users user = usersController.findUserName(username);
+
+                if (user != null && user.getPassword().equals(password)) {
+                    JOptionPane.showMessageDialog(loginGUI, "Inicio de sesión exitoso", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                    loginGUI.dispose();
+                    // Aquí podrías abrir la ventana principal de tu aplicación
+                    MainController mainController = new MainController();
+                } else {
+                    JOptionPane.showMessageDialog(loginGUI, "Usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-            }
-
-            if (credencialesValidas) {
-                JOptionPane.showMessageDialog(loginGUI, "Inicio de sesión exitoso", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-                loginGUI.dispose();
-                MainController mainController = new MainController();
-            } else {
-                JOptionPane.showMessageDialog(loginGUI, "Usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(loginGUI, "Error en la autenticación", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else if (e.getActionCommand().equals("Registrarse")) {
-            RegistroController registroController = new RegistroController(listaUsuarios);
+            // Aquí podrías abrir la ventana de registro si fuera necesario
+            RegistroController registroController = new RegistroController();
         }
     }
 }

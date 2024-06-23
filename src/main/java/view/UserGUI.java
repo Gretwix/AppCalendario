@@ -32,6 +32,11 @@ public class UserGUI extends javax.swing.JFrame {
       return this.txtId.getText();
         
      }
+    public String getTxtUserName() {
+      return this.txtUserName.getText();
+        
+     }
+    
     public JTextField getTxtId() {
         return txtId;
     }
