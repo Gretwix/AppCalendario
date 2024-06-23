@@ -37,7 +37,8 @@ public class CoursesGUI extends javax.swing.JFrame {
     }
     
     public void setCourses(Courses courses){
-        this.txtAcronyms.setText(courses.getName());
+        this.txtAcronyms.setText(courses.getAcronnyms());
+        this.txtName.setText(courses.getName());
         this.txtBlock.setText(courses.getBlock());
         this.txtClas.setText(String.valueOf(courses.getClas()));
         this.txtCredits.setText(String.valueOf(courses.getCredits()));;
