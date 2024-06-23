@@ -5,6 +5,7 @@
 package modelo;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -21,47 +22,45 @@ import javax.persistence.TemporalType;
 
 //Se necesita implementarlo con Date pero no pude fecha aprovacion y fecha vigor, si no no se pueden editar los cambios 
 @Entity
-@Table(name = "plan de estudios")
+@Table(name = "plan_de_estudios")
 public class Plan implements Serializable {
    private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "id")
    private int id; 
-   @Column(name = "fecha_vigor")
-   private int valid;
+   @Column(name = "fecha_vigor", nullable = false)
+   private LocalDate startDate;
    @Column(name = "descripcion")
    private String description;
    @Column(name = "cantidad_creditos")
    private int credits;
-   @Column(name = "fecha_aprobacion")
-   private int approval;
-
-    public Plan(int id, int valid, String description, int credits, int approval) {
-        
+   @Column(name = "fecha_aprobacion", nullable = false)
+   private LocalDate endDate;
+    
+    public Plan() {
     }
-
-    public Plan(Integer id, int valid, String description, int credits, int approval) {
+    public Plan(int id, LocalDate startDate, String description, int credits, LocalDate endDate) {
         this.id = id;
-        this.valid = valid;
+        this.startDate = startDate;
         this.description = description;
         this.credits = credits;
-        this.approval = approval;
+        this.endDate = endDate;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public int getValid() {
-        return valid;
+    public LocalDate getStartDate() {
+        return startDate;
     }
 
-    public void setValid(int valid) {
-        this.valid = valid;
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
     }
 
     public String getDescription() {
@@ -80,17 +79,18 @@ public class Plan implements Serializable {
         this.credits = credits;
     }
 
-    public int getApproval() {
-        return approval;
+    public LocalDate getEndDate() {
+        return endDate;
     }
 
-    public void setApproval(int approval) {
-        this.approval = approval;
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
     }
 
-    @Override
-    public String toString() {
-        return "Plan{" + "id=" + id + ", valid=" + valid + ", description=" + description + ", credits=" + credits + ", approval=" + approval + '}';
-    }
+
     
-    }
+
+}
+
+
+    

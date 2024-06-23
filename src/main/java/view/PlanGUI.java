@@ -35,7 +35,8 @@ public class PlanGUI extends javax.swing.JFrame {
     // No hay campos de tipo Date en la instancia de Plan
 
     // Crear y retornar una nueva instancia de Plan
-    return new Plan(id, valid, description, credits, approval);
+    //return new Plan(id, valid, description, credits, approval);
+        return null;
 
    
                 
@@ -45,7 +46,7 @@ public class PlanGUI extends javax.swing.JFrame {
     this.txtId.setText(String.valueOf(plan.getId()));
     this.txaDescription.setText(plan.getDescription());
     this.txtCredits.setText(String.valueOf(plan.getCredits()));
-    this.txtApproval.setText(String.valueOf(plan.getApproval()));
+    //this.txtApproval.setText(String.valueOf(plan.getApproval()));
     }
     
     public void clean(){
