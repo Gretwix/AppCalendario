@@ -41,9 +41,9 @@ public class CoursesGUI extends javax.swing.JFrame {
         this.txtName.setText(courses.getName());
         this.txtBlock.setText(courses.getBlock());
         this.txtClas.setText(String.valueOf(courses.getClas()));
-        this.txtCredits.setText(String.valueOf(courses.getCredits()));;
-        this.txtModality.setText(courses.getModality());
         this.txtCredits.setText(String.valueOf(courses.getCredits()));
+        this.txtModality.setText(courses.getModality());
+        this.txtWork.setText(String.valueOf(courses.getWork()));
         this.txaDescription.setText(courses.getDescription());
     }
     
@@ -55,10 +55,15 @@ public class CoursesGUI extends javax.swing.JFrame {
         this.txtModality.setText("");
         this.txtWork.setText("");
         this.txaDescription.setText("");
+        this.txtName.setText("");
+        this.txtWork.setText("");
+        
     }
     public boolean emply(){
         boolean emply = false;
         if(txtAcronyms.getText().isEmpty()){
+            emply=true;}
+        if(txtName.getText().isEmpty()){
             emply=true;}
         if(txtBlock.getText().isEmpty()){
             emply=true;}
