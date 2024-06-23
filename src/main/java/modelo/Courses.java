@@ -49,6 +49,10 @@ public class Courses implements Serializable{
         this.description = description;
     }
 
+    public Courses() {
+    }
+    
+
     public String getAcronnyms() {
         return acronnyms;
     }

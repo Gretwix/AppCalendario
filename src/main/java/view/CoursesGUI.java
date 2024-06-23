@@ -22,7 +22,7 @@ public class CoursesGUI extends javax.swing.JFrame {
         return buttonPanel1;
      }
      public String getTextIdNumber(){
-        return null;
+        return txtAcronyms.getText();
     }
     
     public Courses getCourses(){
