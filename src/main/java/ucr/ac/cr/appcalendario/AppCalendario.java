@@ -9,6 +9,7 @@ import controller.LoginController;
 import controller.MainController;
 import controller.MajorsJpaController;
 import controller.PlanJpaController;
+import controller.RegistroController;
 import java.util.ArrayList;
 import modelo.Courses;
 import modelo.Majors;

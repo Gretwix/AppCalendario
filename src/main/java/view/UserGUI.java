@@ -142,7 +142,7 @@ public class UserGUI extends javax.swing.JFrame {
         jLabel5.setText("LastName");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setText("user name");
+        jLabel6.setText("username");
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setText("password");
