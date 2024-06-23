@@ -21,12 +21,16 @@ public class MajorsGUI extends javax.swing.JFrame {
     public ButtonPanel getButtonPanel(){
         return buttonPanel1;
      }
-    public String getTextIdNumber(){
-        return null;
+    public String getTxtName(){
+        return txtName.getText();
+    }
+    
+    public String getTxtCode(){
+        return txtCode.getText();
     }
     
     public Majors getMajors(){
-        return new Majors(this.txtCode.getText(),
+        return new Majors(this.txtName.getText(),
                 this.txtCode.getText(), 
                 this.txaDescrpition.getText(),
                 this.txaMarket.getText(),
@@ -34,17 +38,35 @@ public class MajorsGUI extends javax.swing.JFrame {
     }
     
     public void setMajors(Majors majors){
-        this.txtCode.setText(majors.getName());
+        this.txtName.setText(majors.getName());
+        this.txtCode.setText(majors.getCode());
         this.txaDescrpition.setText(majors.getDescription());
         this.txaMarket.setText(majors.getMarket());
         this.txaProfile.setText(majors.getProfile());
     }
     
     public void clean(){
+        this.txtName.setText("");
         this.txtCode.setText("");
         this.txaDescrpition.setText("");
         this.txaMarket.setText("");
         this.txaProfile.setText("");
+    }
+    
+    public boolean emply(){
+        boolean emply = false;
+        if(txtCode.getText().isEmpty()){
+            emply=true;}
+        if(txaDescrpition.getText().isEmpty()){
+            emply=true;}
+        if(txaMarket.getText().isEmpty()){
+            emply=true;}
+        if(txaProfile.getText().isEmpty()){
+            emply=true;}
+        if(txtName.getText().isEmpty()){
+            emply=true;}
+        
+        return emply;
     }
     /**
      * This method is called from within the constructor to initialize the form.

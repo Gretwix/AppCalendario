@@ -55,6 +55,26 @@ public class CoursesGUI extends javax.swing.JFrame {
         this.txtWork.setText("");
         this.txaDescription.setText("");
     }
+    public boolean emply(){
+        boolean emply = false;
+        if(txtAcronyms.getText().isEmpty()){
+            emply=true;}
+        if(txtBlock.getText().isEmpty()){
+            emply=true;}
+        if(txtClas.getText().isEmpty()){
+            emply=true;}
+        if(txtCredits.getText().isEmpty()){
+            emply=true;}
+        if(txtModality.getText().isEmpty()){
+            emply=true;}
+        if(txaDescription.getText().isEmpty()){
+            emply=true;}
+        if(txtWork.getText().isEmpty()){
+            emply=true;}
+        
+        return emply;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

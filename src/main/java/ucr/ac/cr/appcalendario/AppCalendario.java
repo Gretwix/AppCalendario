@@ -23,20 +23,20 @@ public class AppCalendario {
 
     public static void main(String[] args) {
          // Crea un ArrayList para almacenar los usuarios registrados
-       // ArrayList<User> listaUsuarios = new ArrayList<>();
+        ArrayList<User> listaUsuarios = new ArrayList<>();
 
         // Pasa el ArrayList a LoginController
-        //LoginController loginController = new LoginController(listaUsuarios);
-        try {
-            PlanJpaController planJPA = new PlanJpaController();
-            planJPA.create(new Plan(
-                1, 2, "J", 4, 4
-            ));
-            System.out.print("agg exitosos");
-        } catch (Exception ex) {
-            System.err.println("Error al agregar.");
-            ex.printStackTrace(); // Imprime la pila de la excepción
-        }
+        LoginController loginController = new LoginController(listaUsuarios);
+//        try {
+//            PlanJpaController planJPA = new PlanJpaController();
+//            planJPA.create(new Plan(
+//                1, 2, "J", 4, 4
+//            ));
+//            System.out.print("agg exitosos");
+//        } catch (Exception ex) {
+//            System.err.println("Error al agregar.");
+//            ex.printStackTrace(); // Imprime la pila de la excepción
+//        }
 
     }
 }

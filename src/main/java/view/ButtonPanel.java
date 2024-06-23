@@ -25,6 +25,16 @@ public class ButtonPanel extends javax.swing.JPanel {
         this.btnExit.addActionListener(controller);
         this.btnModify.addActionListener(controller);
     }
+    
+    public void ofM ()
+    {
+        this.btnModify.enableInputMethods(false);
+    }
+    
+    public void onM ()
+    {   
+        this.btnModify.enableInputMethods(true);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
