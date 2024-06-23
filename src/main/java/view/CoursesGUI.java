@@ -30,8 +30,8 @@ public class CoursesGUI extends javax.swing.JFrame {
                 this.txtName.getText(),
                 Integer.parseInt(this.txtCredits.getText()),
                 Integer.parseInt(this.txtWork.getText()),
-                Integer.parseInt(this.txtBlock.getText()),
-                this.txtClas.getText(),
+                Integer.parseInt( this.txtClas.getText()),
+                this.txtBlock.getText(),
                 this.txtModality.getText(),
                this.txaDescription.getText());
     }
