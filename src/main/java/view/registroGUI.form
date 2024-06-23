@@ -24,9 +24,9 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="39" max="32767" attributes="0"/>
+              <EmptySpace pref="35" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -35,7 +35,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="16" max="32767" attributes="0"/>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -45,7 +45,7 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Registro de Usuarios"/>
+            <TitledBorder title="Register"/>
           </Border>
         </Property>
       </Properties>
@@ -55,33 +55,38 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jtEmail" min="-2" pref="152" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jpContraseña" max="32767" attributes="0"/>
-                      </Group>
                       <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jtNombre" min="-2" pref="152" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="txtEmail" min="-2" pref="152" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jtApellido" min="-2" pref="152" max="-2" attributes="0"/>
+                                  <Component id="txtNumber" min="-2" pref="152" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                                  <Component id="jcTipo_Usuario" min="-2" pref="152" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="txtName" min="-2" pref="152" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="txtLastname" min="-2" pref="152" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
-                                  <Component id="btnRegistrarse" min="-2" pref="113" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="txtCarnet" min="-2" pref="152" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="txtId" min="-2" pref="152" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtUsername" min="-2" pref="152" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jpPassword" min="-2" pref="152" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
+                          <Component id="btnRegistrarse" min="-2" pref="113" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -90,34 +95,45 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtName" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtLastname" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jtEmail" alignment="3" max="32767" attributes="0"/>
-                      <Component id="jpContraseña" alignment="3" max="32767" attributes="0"/>
+                      <Component id="txtEmail" alignment="3" max="32767" attributes="0"/>
+                      <Component id="txtNumber" alignment="3" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jcTipo_Usuario" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtId" alignment="3" max="32767" attributes="0"/>
+                      <Component id="txtCarnet" alignment="3" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtUsername" alignment="3" max="32767" attributes="0"/>
+                      <Component id="jpPassword" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnRegistrarse" min="-2" pref="37" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="jtNombre">
+        <Component class="javax.swing.JTextField" name="txtName">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Nombre"/>
+                <TitledBorder title="Name"/>
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNameActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtEmail">
+        <Component class="javax.swing.JTextField" name="txtEmail">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -126,48 +142,63 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jtApellido">
+        <Component class="javax.swing.JTextField" name="txtLastname">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Apellido"/>
+                <TitledBorder title="Lastname"/>
               </Border>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jpContrase&#xf1;a">
+        <Component class="javax.swing.JTextField" name="txtNumber">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Contrase&#xf1;a"/>
+                <TitledBorder title="Number"/>
               </Border>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jcTipo_Usuario">
+        <Component class="javax.swing.JTextField" name="txtCarnet">
           <Properties>
-            <Property name="editable" type="boolean" value="true"/>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="Seleccione"/>
-                <StringItem index="1" value="Estudiante"/>
-                <StringItem index="2" value="Profesor"/>
-              </StringArray>
-            </Property>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Tipo de Usuario"/>
+                <TitledBorder title="Carnet"/>
               </Border>
             </Property>
           </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtUsername">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Username"/>
+              </Border>
+            </Property>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnRegistrarse">
           <Properties>
             <Property name="text" type="java.lang.String" value="Registrarse"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="jpPassword">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Password"/>
+              </Border>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtId">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Id"/>
+              </Border>
+            </Property>
           </Properties>
         </Component>
       </SubComponents>

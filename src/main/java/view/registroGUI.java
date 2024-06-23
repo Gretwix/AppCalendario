@@ -5,6 +5,7 @@
 package view;
 
 import java.awt.event.ActionListener;
+import modelo.Users;
 
 /**
  *
@@ -16,34 +17,51 @@ public class registroGUI extends javax.swing.JFrame {
      * Creates new form registroGUI
      */
     public registroGUI() {
-        initComponents();
+          initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
     }
-    
+
     public void addJoinButtonListener(ActionListener listener) {
         btnRegistrarse.addActionListener(listener);
     }
-    
+
     public String getNombre() {
-        return jtNombre.getText();
+        return txtName.getText();
     }
 
     public String getApellido() {
-        return jtApellido.getText();
+        return txtLastname.getText();
     }
 
     public String getEmail() {
-        return jtEmail.getText();
+        return txtEmail.getText();
     }
 
-    public String getContraseña() {
-        return new String(jpContraseña.getPassword());
+    public String getUsername() {
+        return txtUsername.getText();
+    }
+    
+    public String getNumber() {
+    return txtNumber.getText();
+}
+
+     public String getId() {
+    return txtId.getText();
+}
+    public String getPassword() {
+        return new String(jpPassword.getPassword()); // Obtener la contraseña como String
     }
 
-    public String getTipoUsuario() {
-        return (String) jcTipo_Usuario.getSelectedItem();
+    public String getCarnet() {
+        return txtCarnet.getText();
     }
+
+   public javax.swing.JButton getBtnRegistrarse() {
+        return btnRegistrarse;
+    }
+    
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -55,31 +73,42 @@ public class registroGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jtNombre = new javax.swing.JTextField();
-        jtEmail = new javax.swing.JTextField();
-        jtApellido = new javax.swing.JTextField();
-        jpContraseña = new javax.swing.JPasswordField();
-        jcTipo_Usuario = new javax.swing.JComboBox<>();
+        txtName = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
+        txtLastname = new javax.swing.JTextField();
+        txtNumber = new javax.swing.JTextField();
+        txtCarnet = new javax.swing.JTextField();
+        txtUsername = new javax.swing.JTextField();
         btnRegistrarse = new javax.swing.JButton();
+        jpPassword = new javax.swing.JPasswordField();
+        txtId = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Registro de Usuarios"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Register"));
 
-        jtNombre.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre"));
+        txtName.setBorder(javax.swing.BorderFactory.createTitledBorder("Name"));
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
 
-        jtEmail.setBorder(javax.swing.BorderFactory.createTitledBorder("Email"));
+        txtEmail.setBorder(javax.swing.BorderFactory.createTitledBorder("Email"));
 
-        jtApellido.setBorder(javax.swing.BorderFactory.createTitledBorder("Apellido"));
+        txtLastname.setBorder(javax.swing.BorderFactory.createTitledBorder("Lastname"));
 
-        jpContraseña.setBorder(javax.swing.BorderFactory.createTitledBorder("Contraseña"));
+        txtNumber.setBorder(javax.swing.BorderFactory.createTitledBorder("Number"));
 
-        jcTipo_Usuario.setEditable(true);
-        jcTipo_Usuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Estudiante", "Profesor" }));
-        jcTipo_Usuario.setToolTipText("");
-        jcTipo_Usuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipo de Usuario"));
+        txtCarnet.setBorder(javax.swing.BorderFactory.createTitledBorder("Carnet"));
+
+        txtUsername.setBorder(javax.swing.BorderFactory.createTitledBorder("Username"));
 
         btnRegistrarse.setText("Registrarse");
+
+        jpPassword.setBorder(javax.swing.BorderFactory.createTitledBorder("Password"));
+
+        txtId.setBorder(javax.swing.BorderFactory.createTitledBorder("Id"));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -89,41 +118,51 @@ public class registroGUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jpContraseña))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(89, 89, 89)
-                                .addComponent(jcTipo_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtLastname, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(107, 107, 107)
-                                .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 10, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(txtCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jpPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLastname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtEmail)
-                    .addComponent(jpContraseña))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jcTipo_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmail)
+                    .addComponent(txtNumber))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtId)
+                    .addComponent(txtCarnet))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtUsername)
+                    .addComponent(jpPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12))
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -131,20 +170,24 @@ public class registroGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(44, 44, 44)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,10 +197,13 @@ public class registroGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrarse;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JComboBox<String> jcTipo_Usuario;
-    private javax.swing.JPasswordField jpContraseña;
-    private javax.swing.JTextField jtApellido;
-    private javax.swing.JTextField jtEmail;
-    private javax.swing.JTextField jtNombre;
+    private javax.swing.JPasswordField jpPassword;
+    private javax.swing.JTextField txtCarnet;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtLastname;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtNumber;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }
