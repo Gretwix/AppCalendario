@@ -47,7 +47,7 @@ public class RegistroController implements ActionListener {
                 id = Integer.parseInt(idStr);
             } catch (NumberFormatException ex) {
                 // Manejar la excepción si el ID ingresado no es un número válido
-                JOptionPane.showMessageDialog(registroGUI, "Ingrese un ID válido.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(registroGUI, "Please enter a valid ID.", "Error", JOptionPane.ERROR_MESSAGE);
                 return; // Salir del método actionPerformed si hay un error
             }
 
@@ -55,11 +55,11 @@ public class RegistroController implements ActionListener {
 
             try {
                 usersJpaController.create(nuevoUsuario);
-                JOptionPane.showMessageDialog(registroGUI, "Registro exitoso", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(registroGUI, "Successful registration", "Success", JOptionPane.INFORMATION_MESSAGE);
                 registroGUI.dispose();
             } catch (Exception ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(registroGUI, "Error al registrar usuario", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(registroGUI, "Error registering user", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }

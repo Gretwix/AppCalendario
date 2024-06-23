@@ -37,16 +37,16 @@ public class LoginController implements ActionListener {
                 Users user = usersController.findUserName(username);
 
                 if (user != null && user.getPassword().equals(password)) {
-                    JOptionPane.showMessageDialog(loginGUI, "Inicio de sesión exitoso", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(loginGUI, "Successful login", "Success", JOptionPane.INFORMATION_MESSAGE);
                     loginGUI.dispose();
                     // Aquí podrías abrir la ventana principal de tu aplicación
                     MainController mainController = new MainController();
                 } else {
-                    JOptionPane.showMessageDialog(loginGUI, "Usuario o contraseña incorrectos", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(loginGUI, "Incorrect username or password", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(loginGUI, "Error en la autenticación", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(loginGUI, "Authentication failed", "Error", JOptionPane.ERROR_MESSAGE);
             }
         } else if (e.getActionCommand().equals("Registrarse")) {
             // Aquí podrías abrir la ventana de registro si fuera necesario

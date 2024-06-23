@@ -9,6 +9,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import view.UserGUI;
 import modelo.User;
 import modelo.Users;
@@ -39,10 +40,10 @@ public void actionPerformed(ActionEvent e) {
                         usersJpa.create(userGUI.getUsers());
                         userGUI.clean();
                     } catch (Exception ex) {
-                        System.err.println("Error al agregar.");
+                        JOptionPane.showMessageDialog(userGUI, "\"Error adding.\"", "Error", JOptionPane.INFORMATION_MESSAGE);
                         ex.printStackTrace(); 
                     }
-                }else{System.err.println("No dejar nungun espacio en blanco");
+                }else{JOptionPane.showMessageDialog(userGUI, "\"Do not leave any blank space\"", "Error", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
                 break;
@@ -59,7 +60,7 @@ public void actionPerformed(ActionEvent e) {
                     } catch (Exception ex) {
                         Logger.getLogger(CoursesController.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                }else{System.err.println("No dejar nungun espacio en blanco");
+                }else{JOptionPane.showMessageDialog(userGUI, "\"Do not leave any blank space\"", "Error", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
                 
@@ -71,7 +72,7 @@ public void actionPerformed(ActionEvent e) {
                 userGUI.setUsers(usersJpa.findUsers(Integer.parseInt(userGUI.getTextId())));
                 buttonPanel.onM();
                 }else{
-                    System.err.println("se nesecita un identificador para poder buscar el objeto");
+                    JOptionPane.showMessageDialog(userGUI, "\"an identifier is needed to be able to search for the object\"", "Error", JOptionPane.INFORMATION_MESSAGE);
                      }
             }
             break;
@@ -81,7 +82,7 @@ public void actionPerformed(ActionEvent e) {
                 break;
     }
 }
-    
+  
    
 
     @Override

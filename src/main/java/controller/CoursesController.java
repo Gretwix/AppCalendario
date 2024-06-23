@@ -9,6 +9,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import view.CoursesGUI;
 import modelo.Courses;
 import view.ButtonPanel;
@@ -39,10 +40,11 @@ public void actionPerformed(ActionEvent e) {
                         coursesJpa.create(coursesGUI.getCourses());
                         coursesGUI.clean();
                     } catch (Exception ex) {
-                        System.err.println("Error al agregar.");
+                        JOptionPane.showMessageDialog(coursesGUI, "\"Error loading\"", "Error", JOptionPane.INFORMATION_MESSAGE);
                         ex.printStackTrace(); 
                     }
-                }else{System.err.println("No dejar ningun espacio en blanco");
+                }else 
+                    {JOptionPane.showMessageDialog(coursesGUI, "\"Do not leave any blank space\"", "Error", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
                 break;
@@ -58,7 +60,7 @@ public void actionPerformed(ActionEvent e) {
                     } catch (Exception ex) {
                         Logger.getLogger(CoursesController.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                }else{System.err.println("No dejar nungun espacio en blanco");
+                }else{JOptionPane.showMessageDialog(coursesGUI, "\"Do not leave any blank space\"", "Error", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
                 
@@ -71,7 +73,7 @@ public void actionPerformed(ActionEvent e) {
                 coursesGUI.setCourses(coursesJpa.findCourses(coursesGUI.getTextIdNumber()));
                 buttonPanel.onM();
                 }else{
-                    System.err.println("se nesecita un identificador para poder buscar el objeto");
+                  JOptionPane.showMessageDialog(coursesGUI, "\"an identifier is needed to be able to search for the object\"", "Error", JOptionPane.INFORMATION_MESSAGE);  System.err.println("se nesecita un identificador para poder buscar el objeto");
                 }
             }
                 break;
