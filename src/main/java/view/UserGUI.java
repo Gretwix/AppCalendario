@@ -8,6 +8,7 @@ import controller.MainController;
 import controller.UserController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JTextField;
 import modelo.Users;
 
 /**
@@ -27,10 +28,14 @@ public class UserGUI extends javax.swing.JFrame {
         return buttonPanel1;
     }
 
-    public String getTextIdNumber() {
-        return null;
+    public String getTextId() {
+      return this.txtId.getText();
+        
+     }
+    public JTextField getTxtId() {
+        return txtId;
     }
-
+    
     public Users getUsers() {
         return new Users(Integer.parseInt(this.txtId.getText()),
                 this.txtName.getText(),
@@ -66,6 +71,27 @@ public class UserGUI extends javax.swing.JFrame {
         this.txtPassword.setText("");
     }
 
+     public boolean emply(){
+        boolean emply = false;
+        if(txtName.getText().isEmpty()){
+            emply=true;}
+        if(txtCarnet.getText().isEmpty()){
+            emply=true;}
+        if(txtEmail.getText().isEmpty()){
+            emply=true;}
+        if(txtNumber.getText().isEmpty()){
+            emply=true;}
+        if(txtId.getText().isEmpty()){
+            emply=true;}
+         if(txtLastName.getText().isEmpty()){
+            emply=true;}
+          if(txtUserName.getText().isEmpty()){
+            emply=true;}
+           if(txtPassword.getText().isEmpty()){
+            emply=true;}
+        
+        return emply;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -49,6 +49,10 @@ public class Users implements Serializable {
         this.carnet = carnet;
     }
 
+    public Users() {
+    }
+
+    
     public int getId() {
         return id;
     }
