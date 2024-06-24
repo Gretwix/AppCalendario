@@ -46,12 +46,12 @@ public class ReportGUI extends javax.swing.JFrame {
 
     public void setjCourses(String[] header, String[][] data) {
         DefaultTableModel model = new DefaultTableModel(data, header);
-        this.jtMajors.setModel(model);
-        this.jtMajors.setAutoCreateRowSorter(true);
+        this.jCourses.setModel(model);
+        this.jCourses.setAutoCreateRowSorter(true);
         this.sorter=new TableRowSorter<>(model);
-        this.jtMajors.setRowSorter(sorter);
+        this.jCourses.setRowSorter(sorter);
         
-        this.jScrollPane1.setViewportView(this.jtMajors);
+        this.jScrollPane1.setViewportView(this.jCourses);
     }
     
     

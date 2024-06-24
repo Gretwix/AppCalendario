@@ -4,6 +4,10 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 import modelo.Courses;
 
 /**
@@ -12,6 +16,7 @@ import modelo.Courses;
  */
 public class CoursesGUI extends javax.swing.JFrame {
 
+    TableRowSorter<TableModel> sorter;
     /**
      * Creates new form CoursesGUI
      */
@@ -19,10 +24,14 @@ public class CoursesGUI extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        jTable1.setVisible(false);
     }
      public ButtonPanel getButtonPanel(){
         return buttonPanel1;
      }
+//     public void listButton(ActionListener controller){
+//         btnReport.addActionListener(controller);
+//     }
      public String getTextIdNumber(){
         return txtAcronyms.getText();
     }
@@ -83,6 +92,62 @@ public class CoursesGUI extends javax.swing.JFrame {
         return emply;
     }
     
+    public void setjCourses(String[] header, String[][] data) {
+        DefaultTableModel model = new DefaultTableModel(data, header);
+        this.jTable1.setModel(model);
+        this.jTable1.setAutoCreateRowSorter(true);
+        this.sorter=new TableRowSorter<>(model);
+        this.jTable1.setRowSorter(sorter);
+        
+        this.jScrollPane1.setViewportView(this.jTable1);
+    }
+    
+    public void table(String[][] matrix,String[] header,boolean muestra){
+        
+        setjCourses(header, matrix);
+        
+        if(!muestra){
+            jTable1.setVisible(true);
+            txtAcronyms.setVisible(muestra);
+            txtName.setVisible(muestra);
+            txtBlock.setVisible(muestra);
+            txtClas.setVisible(muestra);
+            txtCredits.setVisible(muestra);
+            txtModality.setVisible(muestra);
+            txaDescription.setVisible(muestra);
+            txtWork.setVisible(muestra);
+            jLabel1.setVisible(muestra);
+            jLabel2.setVisible(muestra);
+            jLabel3.setVisible(muestra);
+            jLabel4.setVisible(muestra);
+            jLabel5.setVisible(muestra);
+            jLabel6.setVisible(muestra);
+            jLabel7.setVisible(muestra);
+            jLabel8.setVisible(muestra);
+            buttonPanel1.setVisible(muestra);
+        }
+        if(muestra){
+            jTable1.setVisible(false);
+            txtAcronyms.setVisible(muestra);
+            txtName.setVisible(muestra);
+            txtBlock.setVisible(muestra);
+            txtClas.setVisible(muestra);
+            txtCredits.setVisible(muestra);
+            txtModality.setVisible(muestra);
+            txaDescription.setVisible(muestra);
+            txtWork.setVisible(muestra);
+            jLabel1.setVisible(muestra);
+            jLabel2.setVisible(muestra);
+            jLabel3.setVisible(muestra);
+            jLabel4.setVisible(muestra);
+            jLabel5.setVisible(muestra);
+            jLabel6.setVisible(muestra);
+            jLabel7.setVisible(muestra);
+            jLabel8.setVisible(muestra);
+            buttonPanel1.setVisible(muestra);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -110,107 +175,68 @@ public class CoursesGUI extends javax.swing.JFrame {
         txaDescription = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
+        btnReport = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(buttonPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 490, -1));
 
         jLabel1.setText("Class hours:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, -1, -1));
 
         jLabel2.setText("Acronyms:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+        getContentPane().add(txtAcronyms, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 198, -1));
+        getContentPane().add(txtClas, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 198, -1));
 
         jLabel3.setText("Work hours:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
+        getContentPane().add(txtWork, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 198, -1));
 
         jLabel4.setText("Block:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
+        getContentPane().add(txtCredits, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 198, -1));
 
         jLabel5.setText("Credits:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
+        getContentPane().add(txtBlock, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 198, -1));
 
         jLabel6.setText("Modality:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, -1));
+        getContentPane().add(txtModality, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 198, -1));
 
         jLabel7.setText("Description:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
 
         txaDescription.setColumns(20);
         txaDescription.setRows(5);
         jScrollPane1.setViewportView(txaDescription);
 
-        jLabel8.setText("Course Name:");
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(buttonPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))
-                        .addGap(99, 99, 99)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAcronyms, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtClas, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtWork, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCredits, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtBlock, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtModality, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(99, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtAcronyms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabel8))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtWork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtClas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtModality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtBlock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel7))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(buttonPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41))
-        );
+        jLabel8.setText("Course Name:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
+        getContentPane().add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 198, -1));
+
+        btnReport.setText("Report");
+        getContentPane().add(btnReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 500, -1, 30));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 560, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -221,6 +247,7 @@ public class CoursesGUI extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReport;
     private view.ButtonPanel buttonPanel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -231,6 +258,8 @@ public class CoursesGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea txaDescription;
     private javax.swing.JTextField txtAcronyms;
     private javax.swing.JTextField txtBlock;
