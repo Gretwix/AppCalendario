@@ -21,6 +21,7 @@ public class MajorsController implements ActionListener, MouseListener{
     private Majors majors;
     private ButtonPanel buttonPanel;
     private MajorsJpaController majorsJpa;
+    boolean muestra=false;
     
     public MajorsController(MajorsGUI majorsGUI) {
        this.majorsGUI = new MajorsGUI();
@@ -77,6 +78,17 @@ public void actionPerformed(ActionEvent e) {
             }
                 break;
 
+                case "Report":
+                if(!muestra){
+                    this.majorsGUI.table(majorsJpa.getMatrix(majorsJpa.findMajorsEntities(), MajorsJpaController.HEADER_MAJORS),  MajorsJpaController.HEADER_MAJORS,muestra);
+                    muestra=true;
+                }
+                if(muestra){
+                    this.majorsGUI.table(majorsJpa.getMatrix(majorsJpa.findMajorsEntities(), MajorsJpaController.HEADER_MAJORS),  MajorsJpaController.HEADER_MAJORS,muestra);
+                    muestra=false;
+                }
+                break;
+                
             case "Exit":
                 this.majorsGUI.dispose();
                 break;

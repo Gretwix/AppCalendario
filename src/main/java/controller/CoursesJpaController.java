@@ -28,7 +28,8 @@ public class CoursesJpaController implements Serializable {
        this.emf = Persistence.createEntityManagerFactory("AppCalendarioPersistence");
     }
     
-
+ public static final String[] HEADER_COURSES = {"sigla", "nombre", "cantidad_creditos", "horas_laborales","horas_lectivas","bloque","modalidad","descripcion"};
+ 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
@@ -94,6 +95,25 @@ public class CoursesJpaController implements Serializable {
                 em.close();
             }
         }
+    }
+     public String[][] getMatrix(List<Courses> coursesList, String[] header){
+        
+          //"sigla", "nombre", "cantidad_creditos", "horas_laborales","horas_lectivas","bloque","modalidad","descripcion"};
+         
+        String[][] matrixMajors = new String[coursesList.size()][header.length];
+        
+    for (int i = 0; i < coursesList.size(); i++) {
+            Courses courses = coursesList.get(i);
+            matrixMajors[i][0] = courses.getAcronnyms();        
+            matrixMajors[i][1] = courses.getName();        
+            matrixMajors[i][2] = String.valueOf(courses.getCredits());
+            matrixMajors[i][3] = String.valueOf(courses.getWork()); 
+            matrixMajors[i][4] = String.valueOf(courses.getClas()); 
+            matrixMajors[i][5] = courses.getBlock();
+            matrixMajors[i][6] = courses.getModality();        
+            matrixMajors[i][7] = courses.getDescription();
+        }
+    return matrixMajors;
     }
 
     public List<Courses> findCoursesEntities() {

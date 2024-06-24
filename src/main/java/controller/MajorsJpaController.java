@@ -24,6 +24,9 @@ import modelo.Majors;
 public class MajorsJpaController implements Serializable {
     private EntityManagerFactory emf = null;
    
+    public static final String[] HEADER_MAJORS = {"codigo", "nombre", "mercado_laboral", "descripcion","perfil_profecional"};
+
+    
     public MajorsJpaController() {
         this.emf = Persistence.createEntityManagerFactory("AppCalendarioPersistence");
     }
@@ -96,6 +99,22 @@ public class MajorsJpaController implements Serializable {
         }
     }
 
+    public String[][] getMatrix(List<Majors> majorsList, String[] header){
+        
+        String[][] matrixMajors = new String[majorsList.size()][header.length];
+        
+    for (int i = 0; i < majorsList.size(); i++) {
+            Majors major = majorsList.get(i);
+            matrixMajors[i][0] = major.getCode();        
+            matrixMajors[i][1] = major.getName();        
+            matrixMajors[i][4] = major.getMarket();
+            matrixMajors[i][2] = major.getDescription(); 
+            matrixMajors[i][3] = major.getProfile(); 
+        }
+    return matrixMajors;
+    }
+    
+    
     public List<Majors> findMajorsEntities() {
         return findMajorsEntities(true, -1, -1);
     }

@@ -4,6 +4,9 @@
  */
 package view;
 
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 import modelo.Majors;
 
 /**
@@ -12,6 +15,7 @@ import modelo.Majors;
  */
 public class MajorsGUI extends javax.swing.JFrame {
 
+    TableRowSorter<TableModel> sorter;
     /**
      * Creates new form MajorsGUI
      */
@@ -71,6 +75,51 @@ public class MajorsGUI extends javax.swing.JFrame {
         
         return emply;
     }
+    
+    public void setjCourses(String[] header, String[][] data) {
+        DefaultTableModel model = new DefaultTableModel(data, header);
+        this.jTable1.setModel(model);
+        this.jTable1.setAutoCreateRowSorter(true);
+        this.sorter=new TableRowSorter<>(model);
+        this.jTable1.setRowSorter(sorter);
+        
+        this.jScrollPane1.setViewportView(this.jTable1);
+    }
+    
+    public void table(String[][] matrix,String[] header,boolean muestra){
+        
+        setjCourses(header, matrix);
+        
+        if(!muestra){
+            jTable1.setVisible(true);
+            txtCode.setVisible(muestra);
+            txtName.setVisible(muestra);
+            txaMarket.setVisible(muestra);
+            txaProfile.setVisible(muestra);
+            txaDescrpition.setVisible(muestra);
+            jLabel1.setVisible(muestra);
+            jLabel2.setVisible(muestra);
+            jLabel3.setVisible(muestra);
+            jLabel4.setVisible(muestra);
+            jLabel5.setVisible(muestra);
+            buttonPanel1.setVisible(muestra);
+        }
+        if(muestra){
+            jTable1.setVisible(false);
+            txtCode.setVisible(muestra);
+            txtName.setVisible(muestra);
+            txaMarket.setVisible(muestra);
+            txaProfile.setVisible(muestra);
+            txaDescrpition.setVisible(muestra);
+            jLabel1.setVisible(muestra);
+            jLabel2.setVisible(muestra);
+            jLabel3.setVisible(muestra);
+            jLabel4.setVisible(muestra);
+            jLabel5.setVisible(muestra);
+            buttonPanel1.setVisible(muestra);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -94,95 +143,66 @@ public class MajorsGUI extends javax.swing.JFrame {
         txaMarket = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        btnReport = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(buttonPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 548, -1, -1));
 
         jLabel1.setText("Code:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 93, -1, -1));
 
         jLabel2.setText("Description:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 224, -1, -1));
+        getContentPane().add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 90, 181, -1));
 
         txaDescrpition.setColumns(20);
         txaDescrpition.setRows(5);
         jScrollPane1.setViewportView(txaDescrpition);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 224, -1, 72));
+
         jLabel3.setText("Profile:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 343, -1, -1));
 
         txaProfile.setColumns(20);
         txaProfile.setRows(5);
         jScrollPane2.setViewportView(txaProfile);
 
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 343, -1, 70));
+
         jLabel4.setText("Market:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 450, -1, -1));
 
         txaMarket.setColumns(20);
         txaMarket.setRows(5);
         jScrollPane3.setViewportView(txaMarket);
 
-        jLabel5.setText("Name:");
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 450, -1, 67));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addComponent(buttonPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(18, 18, 18))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(46, 46, 46))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(46, 46, 46)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCode, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(127, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(buttonPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
-        );
+        jLabel5.setText("Name:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 161, -1, -1));
+        getContentPane().add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 158, 181, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 560, 490));
+
+        btnReport.setText("Report");
+        getContentPane().add(btnReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 610, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -190,6 +210,7 @@ public class MajorsGUI extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReport;
     private view.ButtonPanel buttonPanel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -199,6 +220,8 @@ public class MajorsGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea txaDescrpition;
     private javax.swing.JTextArea txaMarket;
     private javax.swing.JTextArea txaProfile;
