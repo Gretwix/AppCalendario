@@ -4,7 +4,11 @@
  */
 package view;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import modelo.Plan;
+
 
 /**
  *
@@ -17,60 +21,84 @@ public class PlanGUI extends javax.swing.JFrame {
      */
     public PlanGUI() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
-     public ButtonPanel getButtonPanel(){
+
+    public ButtonPanel getButtonPanel() {
         return buttonPanel1;
-     }
-     public String getTextIdNumber(){
-        return null;
     }
-    
-    public Plan getPlan(){
-    int id = Integer.parseInt(this.txtId.getText());
-    int valid = Integer.parseInt(this.txtValid.getText());
-    String description = this.txaDescription.getText();
-    int credits = Integer.parseInt(this.txtCredits.getText());
-    int approval = Integer.parseInt(this.txtApproval.getText());
-    
-    // No hay campos de tipo Date en la instancia de Plan
 
-    // Crear y retornar una nueva instancia de Plan
-    //return new Plan(id, valid, description, credits, approval);
-        return null;
+    public String getTextId() {
+        return this.txtId.getText();
+    }
 
-   
-                
+     public Plan getPlan() {
+        int id = Integer.parseInt(this.txtId.getText());
+        String valid = this.txtValid.getText();
+        String approval = this.txtApproval.getText();
+        String description = this.txaDescription.getText();
+        int credits = Integer.parseInt(this.txtCredits.getText());
+
+        // Convertir las cadenas de fecha a LocalDate
+        LocalDate validDate = stringToLocalDate(valid);
+        LocalDate approvalDate = stringToLocalDate(approval);
+
+        // Crear y retornar una nueva instancia de Plan
+        return new Plan(id, validDate, description, credits, approvalDate);
     }
-    
-    public void setPlan(Plan plan){
-    this.txtId.setText(String.valueOf(plan.getId()));
-    this.txaDescription.setText(plan.getDescription());
-    this.txtCredits.setText(String.valueOf(plan.getCredits()));
-    //this.txtApproval.setText(String.valueOf(plan.getApproval()));
+
+    private LocalDate stringToLocalDate(String dateString) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        try {
+            return LocalDate.parse(dateString, formatter);
+        } catch (DateTimeParseException e) {
+            // Manejo de la excepción si el formato de la fecha es incorrecto
+            System.err.println("Formato de fecha incorrecto: " + dateString);
+            return null;
+        }
     }
-    
-    public void clean(){
+private String localDateToString(LocalDate date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        return date != null ? date.format(formatter) : "";
+    }
+      public void setPlan(Plan plan) {
+        this.txtId.setText(String.valueOf(plan.getId()));
+        this.txaDescription.setText(plan.getDescription());
+        this.txtCredits.setText(String.valueOf(plan.getCredits()));
+        this.txtApproval.setText(localDateToString(plan.getEndDate()));
+        this.txtValid.setText(localDateToString(plan.getStartDate()));
+    }
+
+    public void clean() {
+        this.txtId.setText("");
         this.txtApproval.setText("");
         this.txaDescription.setText("");
         this.txtCredits.setText("");
         this.txtValid.setText("");
     }
-    
-    public boolean emply(){
+
+    public boolean emply() {
         boolean emply = false;
-        if(txtApproval.getText().isEmpty()){
-            emply=true;}
-        if(txaDescription.getText().isEmpty()){
-            emply=true;}
-        if(txtCredits.getText().isEmpty()){
-            emply=true;}
-        if(txtValid.getText().isEmpty()){
-            emply=true;}
-        if(txtId.getText().isEmpty()){
-            emply=true;}
-        
+        if (txtApproval.getText().isEmpty()) {
+            emply = true;
+        }
+        if (txaDescription.getText().isEmpty()) {
+            emply = true;
+        }
+        if (txtCredits.getText().isEmpty()) {
+            emply = true;
+        }
+        if (txtValid.getText().isEmpty()) {
+            emply = true;
+        }
+        if (txtId.getText().isEmpty()) {
+            emply = true;
+        }
+
         return emply;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -167,7 +195,6 @@ public class PlanGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private view.ButtonPanel buttonPanel1;

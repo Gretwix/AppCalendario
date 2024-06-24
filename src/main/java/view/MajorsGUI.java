@@ -17,6 +17,8 @@ public class MajorsGUI extends javax.swing.JFrame {
      */
     public MajorsGUI() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
     public ButtonPanel getButtonPanel(){
         return buttonPanel1;

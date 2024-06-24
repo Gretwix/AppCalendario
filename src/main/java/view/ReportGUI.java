@@ -15,6 +15,8 @@ public class ReportGUI extends javax.swing.JFrame {
      */
     public ReportGUI() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
      public ButtonPanel getButtonPanel(){
         return buttonPanel1;

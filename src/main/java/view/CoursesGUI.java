@@ -17,6 +17,8 @@ public class CoursesGUI extends javax.swing.JFrame {
      */
     public CoursesGUI() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
      public ButtonPanel getButtonPanel(){
         return buttonPanel1;
