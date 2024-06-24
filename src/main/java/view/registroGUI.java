@@ -106,7 +106,7 @@ public class registroGUI extends javax.swing.JFrame {
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 260, 30));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Other 03.png"))); // NOI18N
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-80, 90, 260, -1));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 90, 330, -1));
 
         jPanel1.setBackground(new java.awt.Color(235, 239, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

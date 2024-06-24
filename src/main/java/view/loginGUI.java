@@ -69,13 +69,13 @@ public class loginGUI extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
         jLabel3.setText("Password:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
 
         btnIniciar_secion.setBackground(new java.awt.Color(101, 110, 211));
         btnIniciar_secion.setFont(new java.awt.Font("Corbel", 1, 15)); // NOI18N
         btnIniciar_secion.setForeground(new java.awt.Color(175, 179, 255));
         btnIniciar_secion.setText("Login");
-        getContentPane().add(btnIniciar_secion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 230, 26));
+        getContentPane().add(btnIniciar_secion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 230, 26));
 
         btnRegistrarse.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
         btnRegistrarse.setText("Register");
@@ -85,12 +85,12 @@ public class loginGUI extends javax.swing.JFrame {
 
         txtUsuario.setBackground(new java.awt.Color(235, 239, 255));
         txtUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(101, 110, 211), 3, true));
-        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 137, 230, -1));
+        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 137, 230, 30));
 
         jpContraseña.setBackground(new java.awt.Color(235, 239, 255));
         jpContraseña.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jpContraseña.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(101, 110, 211), 3, true));
-        getContentPane().add(jpContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 191, 230, -1));
+        getContentPane().add(jpContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 230, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Rectangle 6.png"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, -1, 160));

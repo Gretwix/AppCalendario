@@ -50,12 +50,26 @@ public class ButtonPanel extends javax.swing.JPanel {
         btnExit = new javax.swing.JButton();
         btnConsult = new javax.swing.JButton();
 
+        setOpaque(false);
+
+        btnCreate.setBackground(new java.awt.Color(101, 110, 211));
+        btnCreate.setFont(new java.awt.Font("Corbel", 1, 15)); // NOI18N
+        btnCreate.setForeground(new java.awt.Color(175, 179, 255));
         btnCreate.setText("Create");
 
+        btnModify.setBackground(new java.awt.Color(101, 110, 211));
+        btnModify.setFont(new java.awt.Font("Corbel", 1, 15)); // NOI18N
+        btnModify.setForeground(new java.awt.Color(175, 179, 255));
         btnModify.setText("Modify");
 
+        btnExit.setBackground(new java.awt.Color(101, 110, 211));
+        btnExit.setFont(new java.awt.Font("Corbel", 1, 15)); // NOI18N
+        btnExit.setForeground(new java.awt.Color(175, 179, 255));
         btnExit.setText("Exit");
 
+        btnConsult.setBackground(new java.awt.Color(101, 110, 211));
+        btnConsult.setFont(new java.awt.Font("Corbel", 1, 15)); // NOI18N
+        btnConsult.setForeground(new java.awt.Color(175, 179, 255));
         btnConsult.setText("Consult");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
