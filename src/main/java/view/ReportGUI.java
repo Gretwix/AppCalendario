@@ -5,6 +5,10 @@
 package view;
 
 import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.RowFilter;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
@@ -16,6 +20,8 @@ import javax.swing.table.TableRowSorter;
 public class ReportGUI extends javax.swing.JFrame {
     boolean siguiente= false;
     TableRowSorter<TableModel> sorter;
+     TableRowSorter<TableModel> sorterMajors; 
+    TableRowSorter<TableModel> sorterCourses;
     
     /**
      * Creates new form ReportGUI
@@ -25,8 +31,49 @@ public class ReportGUI extends javax.swing.JFrame {
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         inicio();
+        setupFilter();
     }
-    
+    private void setupFilter() {
+        jTFiltro.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                filterTable(jtMajors);
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                filterTable(jtMajors);
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                filterTable(jtMajors);
+            }
+        });
+    }
+
+    private void filterTable(JTable table) {
+        String text = jTFiltro.getText().trim();
+        TableRowSorter<TableModel> sorter = null;
+        if (table == jtMajors) {
+            sorter = sorterMajors;
+        } else if (table == jCourses) {
+            sorter = sorterCourses;
+        }
+
+        if (sorter != null) {
+            if (text.length() == 0) {
+                sorter.setRowFilter(null);
+            } else {
+                try {
+                    sorter.setRowFilter(RowFilter.regexFilter("(?i)" + text, 0));
+                } catch (Exception ex) {
+                    System.err.println("Error al filtrar la tabla: " + ex.getMessage());
+                }
+            }
+        }
+    }
+
     public void inicio(){
             jtMajors.setVisible(true);
         jLMajors.setVisible(true);
@@ -40,23 +87,21 @@ public class ReportGUI extends javax.swing.JFrame {
         DefaultTableModel model = new DefaultTableModel(data, header);
         this.jtMajors.setModel(model);
         this.jtMajors.setAutoCreateRowSorter(true);
-        this.sorter = new TableRowSorter<>(model);
-        this.jtMajors.setRowSorter(sorter);
-
+        this.sorterMajors = new TableRowSorter<>(model);
+        this.jtMajors.setRowSorter(sorterMajors);
         this.jScrollPane1.setViewportView(this.jtMajors);
     }
 
     public void setjCourses(String[] header, String[][] data) {
-        DefaultTableModel model = new DefaultTableModel(data, header);
+       DefaultTableModel model = new DefaultTableModel(data, header);
         this.jCourses.setModel(model);
         this.jCourses.setAutoCreateRowSorter(true);
-        this.sorter = new TableRowSorter<>(model);
-        this.jCourses.setRowSorter(sorter);
-
+        this.sorterCourses = new TableRowSorter<>(model);
+        this.jCourses.setRowSorter(sorterCourses);
         this.jScrollPane2.setViewportView(this.jCourses);
     }
-    
-    
+    //hola
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -66,6 +111,7 @@ public class ReportGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtMajors = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -75,6 +121,10 @@ public class ReportGUI extends javax.swing.JFrame {
         X = new javax.swing.JButton();
         jLMajors = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTFiltro = new javax.swing.JTextField();
+
+        jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -134,6 +184,14 @@ public class ReportGUI extends javax.swing.JFrame {
         getContentPane().add(jLMajors, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 530));
 
+        jLabel3.setText("Filter:");
+        jLabel3.setToolTipText("");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
+        jLabel3.getAccessibleContext().setAccessibleName("Filter");
+        jLabel3.getAccessibleContext().setAccessibleDescription("");
+
+        getContentPane().add(jTFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 120, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -146,7 +204,9 @@ public class ReportGUI extends javax.swing.JFrame {
             jCourses.setVisible(true);
             jLCourses.setVisible(true);
             jScrollPane2.setVisible(true);
-            
+            jTFiltro.setVisible(false);
+            jLabel2.setVisible(false);
+            jLabel3.setVisible(false);
             
         }
         if(siguiente){
@@ -156,7 +216,9 @@ public class ReportGUI extends javax.swing.JFrame {
             jCourses.setVisible(false);
             jLCourses.setVisible(false);
             jScrollPane2.setVisible(false);
-            
+            jTFiltro.setVisible(true);
+            jLabel2.setVisible(true);
+            jLabel3.setVisible(true);
         }
         siguiente = !siguiente;
     }//GEN-LAST:event_SigActionPerformed
@@ -174,8 +236,11 @@ public class ReportGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLCourses;
     private javax.swing.JLabel jLMajors;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTFiltro;
     private javax.swing.JTable jtMajors;
     // End of variables declaration//GEN-END:variables
 }

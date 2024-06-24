@@ -125,85 +125,90 @@ private String localDateToString(LocalDate date) {
         buttonPanel1 = new view.ButtonPanel();
         jLabel6 = new javax.swing.JLabel();
         txtCode = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
         jLabel1.setText("Description:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
+        txaDescription.setBackground(new java.awt.Color(235, 239, 255));
         txaDescription.setColumns(20);
+        txaDescription.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txaDescription.setRows(5);
+        txaDescription.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(101, 110, 211), 3, true));
         jScrollPane1.setViewportView(txaDescription);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 280, -1));
+
+        jLabel2.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
         jLabel2.setText("Credits:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
 
+        txtCredits.setBackground(new java.awt.Color(235, 239, 255));
+        txtCredits.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtCredits.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(101, 110, 211), 3, true));
+        getContentPane().add(txtCredits, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 280, 30));
+
+        jLabel3.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
         jLabel3.setText("Approval date:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, -1, -1));
 
+        txtApproval.setBackground(new java.awt.Color(235, 239, 255));
+        txtApproval.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtApproval.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(101, 110, 211), 3, true));
+        getContentPane().add(txtApproval, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 280, 30));
+
+        jLabel4.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
         jLabel4.setText("Valid date:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, -1, -1));
 
-        jLabel5.setText("Id:");
+        txtValid.setBackground(new java.awt.Color(235, 239, 255));
+        txtValid.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtValid.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(101, 110, 211), 3, true));
+        getContentPane().add(txtValid, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 480, 280, 30));
 
-        jLabel6.setText("Codigo:");
+        jLabel5.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
+        jLabel5.setText("ID:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addComponent(buttonPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(116, 116, 116)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCredits, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtApproval, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtValid, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCode, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(txtCredits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(104, 104, 104)
-                        .addComponent(jLabel2)))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtApproval, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtValid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addComponent(buttonPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
-        );
+        txtId.setBackground(new java.awt.Color(235, 239, 255));
+        txtId.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtId.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(101, 110, 211), 3, true));
+        getContentPane().add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 280, 30));
+        getContentPane().add(buttonPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 600, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
+        jLabel6.setText("Code:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+
+        txtCode.setBackground(new java.awt.Color(235, 239, 255));
+        txtCode.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtCode.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(101, 110, 211), 3, true));
+        getContentPane().add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 280, 30));
+
+        jLabel10.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
+        jLabel10.setText("Study Plan");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 100, 30));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Rectangle.png"))); // NOI18N
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, 120, -1));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Rectangle 2.png"))); // NOI18N
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 160, -1));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Other 07reg.png"))); // NOI18N
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 250, -1));
+
+        jLabel9.setBackground(new java.awt.Color(235, 239, 255));
+        jLabel9.setOpaque(true);
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 710));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -212,11 +217,16 @@ private String localDateToString(LocalDate date) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private view.ButtonPanel buttonPanel1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txaDescription;
     private javax.swing.JTextField txtApproval;
