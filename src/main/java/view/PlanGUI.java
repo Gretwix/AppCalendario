@@ -194,7 +194,7 @@ private String localDateToString(LocalDate date) {
         getContentPane().add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 280, 30));
 
         jLabel10.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
-        jLabel10.setText("Degree Plan");
+        jLabel10.setText("Study Plan");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 100, 30));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Rectangle.png"))); // NOI18N
