@@ -100,7 +100,7 @@ public class ReportGUI extends javax.swing.JFrame {
         this.jCourses.setRowSorter(sorterCourses);
         this.jScrollPane2.setViewportView(this.jCourses);
     }
-    
+    //hola
 
     /**
      * This method is called from within the constructor to initialize the form.
