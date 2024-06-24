@@ -29,7 +29,7 @@ public class LoginController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand().equals("Iniciar sesion")) {
+        if (e.getActionCommand().equals("Login")) {
             String username = loginGUI.getUsername();
             String password = loginGUI.getPassword();
 
@@ -48,7 +48,7 @@ public class LoginController implements ActionListener {
                 ex.printStackTrace();
                 JOptionPane.showMessageDialog(loginGUI, "Authentication failed", "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } else if (e.getActionCommand().equals("Registrarse")) {
+        } else if (e.getActionCommand().equals("Register")) {
             // Aquí podrías abrir la ventana de registro si fuera necesario
             RegistroController registroController = new RegistroController();
         }
