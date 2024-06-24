@@ -36,17 +36,30 @@ public class Plan implements Serializable {
    private int credits;
    @Column(name = "fecha_aprobacion", nullable = false)
    private LocalDate endDate;
+   @Column(name = "carrera_codigo", nullable = false)
+   private int carrera;
     
     public Plan() {
     }
-    public Plan(int id, LocalDate startDate, String description, int credits, LocalDate endDate) {
+    public Plan(int id, LocalDate startDate, String description, int credits, LocalDate endDate,int carrera) {
         this.id = id;
         this.startDate = startDate;
         this.description = description;
         this.credits = credits;
         this.endDate = endDate;
+        this.carrera = carrera;
     }
 
+    public int getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(int carrera) {
+        this.carrera = carrera;
+    }
+
+    
+    
     public int getId() {
         return id;
     }

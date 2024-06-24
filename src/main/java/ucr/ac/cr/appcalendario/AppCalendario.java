@@ -11,6 +11,7 @@ import controller.MainController;
 import controller.MajorsJpaController;
 import controller.PlanJpaController;
 import controller.RegistroController;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import modelo.Courses;
 import modelo.Majors;
@@ -30,5 +31,28 @@ public class AppCalendario {
         // Pasa el ArrayList a LoginController
          LoginController loginController = new LoginController();
 //
+        /*try{
+             PlanJpaController planJPA = new PlanJpaController();
+            int startDateInt = 20240203;  // Formato YYYYMMDD
+            int endDateInt = 20240104;    // Formato YYYYMMDD
+            LocalDate startDate = intToLocalDate(startDateInt);
+            LocalDate endDate = intToLocalDate(endDateInt);
+            String careerCode = "aa";
+
+        Plan plan = new Plan(8, startDate, "jeikol@hotmail.com", 1, endDate,311);
+            planJPA.create(plan);
+         //planJPA.findPlan(12);
+
+    }catch(Exception ex){
+    System.err.println("Error al agregar."+ ex.getMessage());
     }
+//
+    }
+    public static LocalDate intToLocalDate(int dateInt) {
+        int year = dateInt / 10000;
+        int month = (dateInt % 10000) / 100;
+        int day = dateInt % 100;
+        return LocalDate.of(year, month, day);
+    }*/
+}
 }
