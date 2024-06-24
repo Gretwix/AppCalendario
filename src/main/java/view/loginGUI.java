@@ -73,7 +73,7 @@ public class loginGUI extends javax.swing.JFrame {
 
         btnIniciar_secion.setBackground(new java.awt.Color(101, 110, 211));
         btnIniciar_secion.setFont(new java.awt.Font("Corbel", 1, 15)); // NOI18N
-        btnIniciar_secion.setForeground(new java.awt.Color(175, 179, 255));
+        btnIniciar_secion.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciar_secion.setText("Login");
         getContentPane().add(btnIniciar_secion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 230, 30));
 

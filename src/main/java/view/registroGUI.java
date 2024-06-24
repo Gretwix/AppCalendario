@@ -148,7 +148,7 @@ public class registroGUI extends javax.swing.JFrame {
 
         btnRegistrarse.setBackground(new java.awt.Color(101, 110, 211));
         btnRegistrarse.setFont(new java.awt.Font("Corbel", 1, 15)); // NOI18N
-        btnRegistrarse.setForeground(new java.awt.Color(175, 179, 255));
+        btnRegistrarse.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarse.setText("Register");
         btnRegistrarse.setBorder(null);
         jPanel1.add(btnRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 310, 30));
