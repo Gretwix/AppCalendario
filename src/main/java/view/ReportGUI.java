@@ -111,7 +111,12 @@ public class ReportGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
         jLabel2 = new javax.swing.JLabel();
+=======
+        jLabel16 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+>>>>>>> 1a3b3a2aa303d86d50c30d369f36d3196c8caef6
         jScrollPane1 = new javax.swing.JScrollPane();
         jtMajors = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -120,6 +125,8 @@ public class ReportGUI extends javax.swing.JFrame {
         jLCourses = new javax.swing.JLabel();
         X = new javax.swing.JButton();
         jLMajors = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTFiltro = new javax.swing.JTextField();
@@ -129,6 +136,15 @@ public class ReportGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Rectangle1.png"))); // NOI18N
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 460, 150, 110));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Rectangle3.png"))); // NOI18N
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, 150, -1));
+
+        jtMajors.setBackground(new java.awt.Color(101, 110, 211));
+        jtMajors.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jtMajors.setForeground(new java.awt.Color(255, 255, 255));
         jtMajors.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -140,10 +156,16 @@ public class ReportGUI extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jtMajors.setGridColor(new java.awt.Color(204, 204, 255));
+        jtMajors.setSelectionBackground(new java.awt.Color(101, 110, 211));
+        jtMajors.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jtMajors);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 73, 650, 350));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 610, 320));
 
+        jCourses.setBackground(new java.awt.Color(101, 110, 211));
+        jCourses.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jCourses.setForeground(new java.awt.Color(255, 255, 255));
         jCourses.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -155,34 +177,55 @@ public class ReportGUI extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jCourses.setGridColor(new java.awt.Color(204, 204, 255));
+        jCourses.setSelectionBackground(new java.awt.Color(101, 110, 211));
+        jCourses.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setViewportView(jCourses);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 77, 650, 350));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 610, 320));
 
-        Sig.setText("Sig");
+        Sig.setBackground(new java.awt.Color(101, 110, 211));
+        Sig.setFont(new java.awt.Font("Corbel", 1, 15)); // NOI18N
+        Sig.setForeground(new java.awt.Color(255, 255, 255));
+        Sig.setText("Next");
+        Sig.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Sig.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SigActionPerformed(evt);
             }
         });
-        getContentPane().add(Sig, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 460, -1, -1));
+        getContentPane().add(Sig, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 480, 90, 30));
 
-        jLCourses.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLCourses.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         jLCourses.setText("Courses list");
-        getContentPane().add(jLCourses, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+        getContentPane().add(jLCourses, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, -1));
 
+        X.setBackground(new java.awt.Color(101, 110, 211));
+        X.setFont(new java.awt.Font("Corbel", 1, 36)); // NOI18N
+        X.setForeground(new java.awt.Color(101, 110, 211));
         X.setText("X");
+        X.setBorder(null);
+        X.setContentAreaFilled(false);
         X.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 XActionPerformed(evt);
             }
         });
-        getContentPane().add(X, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 20, -1, -1));
+        getContentPane().add(X, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, -1, -1));
 
-        jLMajors.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLMajors.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
         jLMajors.setText("Majors list");
-        getContentPane().add(jLMajors, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 530));
+        getContentPane().add(jLMajors, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, -1));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Rectangle.png"))); // NOI18N
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, -10, 130, -1));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Rectangle 2.png"))); // NOI18N
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 160, -1));
+
+        jLabel1.setBackground(new java.awt.Color(235, 239, 255));
+        jLabel1.setOpaque(true);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 570));
 
         jLabel3.setText("Filter:");
         jLabel3.setToolTipText("");
@@ -236,8 +279,15 @@ public class ReportGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLCourses;
     private javax.swing.JLabel jLMajors;
     private javax.swing.JLabel jLabel1;
+<<<<<<< HEAD
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+=======
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+>>>>>>> 1a3b3a2aa303d86d50c30d369f36d3196c8caef6
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTFiltro;
