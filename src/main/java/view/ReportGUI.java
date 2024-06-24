@@ -29,18 +29,20 @@ public class ReportGUI extends javax.swing.JFrame {
     
     public void inicio(){
             jtMajors.setVisible(true);
-            jLMajors.setVisible(true);
-            jCourses.setVisible(false);
-            jLCourses.setVisible(false);
+        jLMajors.setVisible(true);
+        jScrollPane1.setVisible(true);
+        jCourses.setVisible(false);
+        jLCourses.setVisible(false);
+        jScrollPane2.setVisible(false);
     }
    
     public void setJtMajors(String[] header, String[][] data) {
         DefaultTableModel model = new DefaultTableModel(data, header);
         this.jtMajors.setModel(model);
         this.jtMajors.setAutoCreateRowSorter(true);
-        this.sorter=new TableRowSorter<>(model);
+        this.sorter = new TableRowSorter<>(model);
         this.jtMajors.setRowSorter(sorter);
-        
+
         this.jScrollPane1.setViewportView(this.jtMajors);
     }
 
@@ -48,10 +50,10 @@ public class ReportGUI extends javax.swing.JFrame {
         DefaultTableModel model = new DefaultTableModel(data, header);
         this.jCourses.setModel(model);
         this.jCourses.setAutoCreateRowSorter(true);
-        this.sorter=new TableRowSorter<>(model);
+        this.sorter = new TableRowSorter<>(model);
         this.jCourses.setRowSorter(sorter);
-        
-        this.jScrollPane1.setViewportView(this.jCourses);
+
+        this.jScrollPane2.setViewportView(this.jCourses);
     }
     
     
@@ -138,20 +140,25 @@ public class ReportGUI extends javax.swing.JFrame {
     private void SigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SigActionPerformed
         
         if(!siguiente){
-            jtMajors.setVisible(true);
-            jLMajors.setVisible(true);
-            jCourses.setVisible(false);
-            jLCourses.setVisible(false);
-            siguiente=true;
-        }
-        if(siguiente){
             jtMajors.setVisible(false);
             jLMajors.setVisible(false);
+            jScrollPane1.setVisible(false);
             jCourses.setVisible(true);
             jLCourses.setVisible(true);
-            siguiente=false;
+            jScrollPane2.setVisible(true);
+            
+            
         }
-        
+        if(siguiente){
+            jtMajors.setVisible(true);
+            jLMajors.setVisible(true);
+            jScrollPane1.setVisible(true);
+            jCourses.setVisible(false);
+            jLCourses.setVisible(false);
+            jScrollPane2.setVisible(false);
+            
+        }
+        siguiente = !siguiente;
     }//GEN-LAST:event_SigActionPerformed
 
     private void XActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XActionPerformed
