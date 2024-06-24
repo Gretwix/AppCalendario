@@ -4,7 +4,12 @@
  */
 package view;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
@@ -25,6 +30,11 @@ public class MajorsGUI extends javax.swing.JFrame {
         jTable1.setVisible(false);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        this.setLayout(new BorderLayout());
+        
+         jTable1 = new JTable();
+    JScrollPane scrollPane = new JScrollPane(jTable1);
+    this.add(scrollPane, BorderLayout.CENTER); 
     }
     public ButtonPanel getButtonPanel(){
         return buttonPanel1;
@@ -126,7 +136,35 @@ public class MajorsGUI extends javax.swing.JFrame {
    public static void main(String[] args) {
   MajorsGUI majorsGUI=new MajorsGUI();
     }  
+    private void setupUI() {
+        // Configurar el layout del JFrame
+      this.setTitle("Majors Report");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLayout(new BorderLayout());
+
+        // Agregar el panel con la tabla al centro del JFrame
+        this.add(jTable1, BorderLayout.CENTER);
+
+        // Configurar la ventana
+        this.pack(); // Ajustar tamaño automáticamente según los componentes
+        this.setLocationRelativeTo(null); // Centrar la ventana en la pantalla
+    }
+
+    public void setjTableData(String[] header, Object[][] data) {
+        DefaultTableModel model = new DefaultTableModel(data, header);
+        jTable1.setModel(model); // Configura el modelo de la JTable
+
+        // Configurar sorter si es necesario
+        jTable1.setAutoCreateRowSorter(true);
+        TableRowSorter<TableModel> sorter = new TableRowSorter<>(model);
+        jTable1.setRowSorter(sorter);
+    }
+
     
+
+public void showTable(boolean show) {
+    this.jTable1.setVisible(show); // Ajusta la visibilidad de la JTable
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -136,6 +174,8 @@ public class MajorsGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         buttonPanel1 = new view.ButtonPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -150,9 +190,20 @@ public class MajorsGUI extends javax.swing.JFrame {
         txaMarket = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         btnReport = new javax.swing.JButton();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -192,21 +243,6 @@ public class MajorsGUI extends javax.swing.JFrame {
         jLabel5.setText("Name:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 161, -1, -1));
         getContentPane().add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 158, 181, -1));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane4.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 560, 490));
 
         btnReport.setText("Report");
         getContentPane().add(btnReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 610, -1, -1));

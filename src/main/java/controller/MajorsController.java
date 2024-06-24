@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import view.MajorsGUI;
@@ -78,23 +79,48 @@ public void actionPerformed(ActionEvent e) {
                 }
             }
                 break;
-
-                case "Report":
-                if(!muestra){
-                    this.majorsGUI.setjCourses(MajorsJpaController.HEADER_MAJORS, majorsJpa.getMatrix(majorsJpa.findMajorsEntities(),MajorsJpaController.HEADER_MAJORS));
-                    this.majorsGUI.table(muestra);
-                    muestra=true;
-                }
-                if(muestra){
-                    this.majorsGUI.table(muestra);
-                    muestra=false;
-                }
+            case "Report":
+                 if (!muestra) {
+        try {
+            // Obtener los datos de la base de datos
+            List<Majors> allMajors = majorsJpa.findMajorsEntities();
+            // Preparar los datos para mostrar en la tabla
+            Object[][] data = majorsJpa.getMatrix(allMajors, MajorsJpaController.HEADER_MAJORS);
+            // Mostrar la tabla en la interfaz gráfica majorsGUI
+            majorsGUI.setjTableData(MajorsJpaController.HEADER_MAJORS, data);
+            majorsGUI.showTable(true); // Mostrar la tabla
+            muestra = true;
+        } catch (Exception ex) {
+            System.err.println("Error al obtener o mostrar los datos:");
+            ex.printStackTrace();
+        }
+    } else {
+        majorsGUI.showTable(false); // Ocultar la tabla
+        muestra = false;
+    }
+            break;
+        
+        case "Exit":
+            this.majorsGUI.dispose();
+          
                 break;
                 
-            case "Exit":
-                this.majorsGUI.dispose();
-                break;
+            
         }
+    }
+    
+    private String[][] convertToObjectStringArray(Object[][] data) {
+        if (data == null) {
+            return null;
+        }
+        String[][] stringData = new String[data.length][];
+        for (int i = 0; i < data.length; i++) {
+            stringData[i] = new String[data[i].length];
+            for (int j = 0; j < data[i].length; j++) {
+                stringData[i][j] = String.valueOf(data[i][j]);
+            }
+        }
+        return stringData;
     }
     
   

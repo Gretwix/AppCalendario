@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -85,21 +86,43 @@ public void actionPerformed(ActionEvent e) {
                 break;
             
             case "Report":
-                if(!muestra){
-                    this.coursesGUI.setjCourses(CoursesJpaController.HEADER_COURSES, coursesJpa.getMatrix(coursesJpa.findCoursesEntities(), CoursesJpaController.HEADER_COURSES));
-                    this.coursesGUI.table(muestra);
-                    muestra=true;
-                }
-                if(muestra){
-                    this.coursesGUI.table(muestra);
-                    muestra=false;
-                }
-                break;
+    if (!muestra) {
+        try {
+            // Obtener los datos de la base de datos
+            List<Courses> allCourses = coursesJpa.findCoursesEntities();
+            // Preparar los datos para mostrar en la tabla
+            Object[][] data = coursesJpa.getMatrix(allCourses, CoursesJpaController.HEADER_COURSES);
+            // Mostrar la tabla en la interfaz gráfica majorsGUI
+            coursesGUI.setjCourses(CoursesJpaController.HEADER_COURSES, convertToObjectStringArray(data));
+            coursesGUI.table(true); // Mostrar la tabla
+            muestra = true;
+        } catch (Exception ex) {
+            System.err.println("Error al obtener o mostrar los datos:");
+            ex.printStackTrace();
+        }
+    } else {
+        coursesGUI.table(false); // Ocultar la tabla
+        muestra = false;
+    }
+    break;
             
             }
+        
     }
     
-   
+   private String[][] convertToObjectStringArray(Object[][] data) {
+        if (data == null) {
+            return null;
+        }
+        String[][] stringData = new String[data.length][];
+        for (int i = 0; i < data.length; i++) {
+            stringData[i] = new String[data[i].length];
+            for (int j = 0; j < data[i].length; j++) {
+                stringData[i][j] = String.valueOf(data[i][j]);
+            }
+        }
+        return stringData;
+    }
 
     @Override
     public void mouseClicked(MouseEvent e) {
