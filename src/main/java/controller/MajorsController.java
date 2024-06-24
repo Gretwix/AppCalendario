@@ -23,7 +23,7 @@ public class MajorsController implements ActionListener, MouseListener{
     private MajorsJpaController majorsJpa;
     boolean muestra=false;
     
-    public MajorsController() {
+    public MajorsController(MajorsGUI majorsGUI) {
        this.majorsGUI = new MajorsGUI();
        this.majorsJpa = new MajorsJpaController();
         this.buttonPanel = this.majorsGUI.getButtonPanel();
