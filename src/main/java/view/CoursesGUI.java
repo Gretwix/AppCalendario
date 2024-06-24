@@ -29,9 +29,9 @@ public class CoursesGUI extends javax.swing.JFrame {
      public ButtonPanel getButtonPanel(){
         return buttonPanel1;
      }
-//     public void listButton(ActionListener controller){
-//         btnReport.addActionListener(controller);
-//     }
+     public void listButton(ActionListener controller){
+         btnReport.addActionListener(controller);
+     }
      public String getTextIdNumber(){
         return txtAcronyms.getText();
     }
@@ -102,9 +102,7 @@ public class CoursesGUI extends javax.swing.JFrame {
         this.jScrollPane1.setViewportView(this.jTable1);
     }
     
-    public void table(String[][] matrix,String[] header,boolean muestra){
-        
-        setjCourses(header, matrix);
+    public void table(boolean muestra){
         
         if(!muestra){
             jTable1.setVisible(true);

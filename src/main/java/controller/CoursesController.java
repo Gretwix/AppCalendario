@@ -29,7 +29,7 @@ public class CoursesController implements ActionListener, MouseListener{
        this.coursesJpa= new CoursesJpaController(); 
         this.buttonPanel = this.coursesGUI.getButtonPanel();
         this.buttonPanel.listen(this);
-//        this.coursesGUI.listButton(this);
+        this.coursesGUI.listButton(this);
         this.buttonPanel.ofM();
         this.coursesGUI.setVisible(true);
     }
@@ -86,11 +86,12 @@ public void actionPerformed(ActionEvent e) {
             
             case "Report":
                 if(!muestra){
-                    this.coursesGUI.table(coursesJpa.getMatrix(coursesJpa.findCoursesEntities(), CoursesJpaController.HEADER_COURSES), CoursesJpaController.HEADER_COURSES,muestra);
+                    this.coursesGUI.setjCourses(CoursesJpaController.HEADER_COURSES, coursesJpa.getMatrix(coursesJpa.findCoursesEntities(), CoursesJpaController.HEADER_COURSES));
+                    this.coursesGUI.table(muestra);
                     muestra=true;
                 }
                 if(muestra){
-                    this.coursesGUI.table(coursesJpa.getMatrix(coursesJpa.findCoursesEntities(), CoursesJpaController.HEADER_COURSES), CoursesJpaController.HEADER_COURSES,muestra);
+                    this.coursesGUI.table(muestra);
                     muestra=false;
                 }
                 break;

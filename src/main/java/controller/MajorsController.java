@@ -23,11 +23,12 @@ public class MajorsController implements ActionListener, MouseListener{
     private MajorsJpaController majorsJpa;
     boolean muestra=false;
     
-    public MajorsController(MajorsGUI majorsGUI) {
+    public MajorsController() {
        this.majorsGUI = new MajorsGUI();
        this.majorsJpa = new MajorsJpaController();
         this.buttonPanel = this.majorsGUI.getButtonPanel();
         this.buttonPanel.listen(this);
+        this.majorsGUI.listButton(this);
         this.buttonPanel.ofM();
         this.majorsGUI.setVisible(true);
     }
@@ -80,11 +81,12 @@ public void actionPerformed(ActionEvent e) {
 
                 case "Report":
                 if(!muestra){
-                    this.majorsGUI.table(majorsJpa.getMatrix(majorsJpa.findMajorsEntities(), MajorsJpaController.HEADER_MAJORS),  MajorsJpaController.HEADER_MAJORS,muestra);
+                    this.majorsGUI.setjCourses(MajorsJpaController.HEADER_MAJORS, majorsJpa.getMatrix(majorsJpa.findMajorsEntities(),MajorsJpaController.HEADER_MAJORS));
+                    this.majorsGUI.table(muestra);
                     muestra=true;
                 }
                 if(muestra){
-                    this.majorsGUI.table(majorsJpa.getMatrix(majorsJpa.findMajorsEntities(), MajorsJpaController.HEADER_MAJORS),  MajorsJpaController.HEADER_MAJORS,muestra);
+                    this.majorsGUI.table(muestra);
                     muestra=false;
                 }
                 break;
@@ -95,7 +97,8 @@ public void actionPerformed(ActionEvent e) {
         }
     }
     
-   
+  
+
 
     @Override
     public void mouseClicked(MouseEvent e) {

@@ -4,6 +4,7 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
@@ -21,6 +22,7 @@ public class MajorsGUI extends javax.swing.JFrame {
      */
     public MajorsGUI() {
         initComponents();
+        jTable1.setVisible(false);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
     }
@@ -75,6 +77,9 @@ public class MajorsGUI extends javax.swing.JFrame {
         
         return emply;
     }
+    public void listButton(ActionListener controller){
+         btnReport.addActionListener(controller);
+     }
     
     public void setjCourses(String[] header, String[][] data) {
         DefaultTableModel model = new DefaultTableModel(data, header);
@@ -86,39 +91,41 @@ public class MajorsGUI extends javax.swing.JFrame {
         this.jScrollPane1.setViewportView(this.jTable1);
     }
     
-    public void table(String[][] matrix,String[] header,boolean muestra){
-        
-        setjCourses(header, matrix);
+    public void table(boolean muestra){
         
         if(!muestra){
             jTable1.setVisible(true);
-            txtCode.setVisible(muestra);
-            txtName.setVisible(muestra);
-            txaMarket.setVisible(muestra);
-            txaProfile.setVisible(muestra);
-            txaDescrpition.setVisible(muestra);
-            jLabel1.setVisible(muestra);
-            jLabel2.setVisible(muestra);
-            jLabel3.setVisible(muestra);
-            jLabel4.setVisible(muestra);
-            jLabel5.setVisible(muestra);
-            buttonPanel1.setVisible(muestra);
+            txtCode.setVisible(false);
+            txtName.setVisible(false);
+            txaMarket.setVisible(false);
+            txaProfile.setVisible(false);
+            txaDescrpition.setVisible(false);
+            jLabel1.setVisible(false);
+            jLabel2.setVisible(false);
+            jLabel3.setVisible(false);
+            jLabel4.setVisible(false);
+            jLabel5.setVisible(false);
+            buttonPanel1.setVisible(false);
         }
         if(muestra){
             jTable1.setVisible(false);
-            txtCode.setVisible(muestra);
-            txtName.setVisible(muestra);
-            txaMarket.setVisible(muestra);
-            txaProfile.setVisible(muestra);
-            txaDescrpition.setVisible(muestra);
-            jLabel1.setVisible(muestra);
-            jLabel2.setVisible(muestra);
-            jLabel3.setVisible(muestra);
-            jLabel4.setVisible(muestra);
-            jLabel5.setVisible(muestra);
-            buttonPanel1.setVisible(muestra);
+            txtCode.setVisible(true);
+            txtName.setVisible(true);
+            txaMarket.setVisible(true);
+            txaProfile.setVisible(true);
+            txaDescrpition.setVisible(true);
+            jLabel1.setVisible(true);
+            jLabel2.setVisible(true);
+            jLabel3.setVisible(true);
+            jLabel4.setVisible(true);
+            jLabel5.setVisible(true);
+            buttonPanel1.setVisible(true);
         }
     }
+    
+   public static void main(String[] args) {
+  MajorsGUI majorsGUI=new MajorsGUI();
+    }  
     
     /**
      * This method is called from within the constructor to initialize the form.

@@ -61,7 +61,7 @@ public class MainController implements ActionListener {
                 System.out.println("User");
                 break;
             case "Majors":
-                this.majorsController = new MajorsController (majorsGUI);
+                //this.majorsController = new MajorsController (majorsGUI);
                 System.out.println("Majors");
                 break;
             case "Courses":
