@@ -4,12 +4,19 @@
  */
 package view;
 
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author alehe
  */
 public class ReportGUI extends javax.swing.JFrame {
-
+    boolean siguiente= false;
+    TableRowSorter<TableModel> sorter;
+    
     /**
      * Creates new form ReportGUI
      */
@@ -17,10 +24,37 @@ public class ReportGUI extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        inicio();
     }
-     public ButtonPanel getButtonPanel(){
-        return buttonPanel1;
-     }
+    
+    public void inicio(){
+            jtMajors.setVisible(true);
+            jLMajors.setVisible(true);
+            jCourses.setVisible(false);
+            jLCourses.setVisible(false);
+    }
+   
+    public void setJtMajors(String[] header, String[][] data) {
+        DefaultTableModel model = new DefaultTableModel(data, header);
+        this.jtMajors.setModel(model);
+        this.jtMajors.setAutoCreateRowSorter(true);
+        this.sorter=new TableRowSorter<>(model);
+        this.jtMajors.setRowSorter(sorter);
+        
+        this.jScrollPane1.setViewportView(this.jtMajors);
+    }
+
+    public void setjCourses(String[] header, String[][] data) {
+        DefaultTableModel model = new DefaultTableModel(data, header);
+        this.jtMajors.setModel(model);
+        this.jtMajors.setAutoCreateRowSorter(true);
+        this.sorter=new TableRowSorter<>(model);
+        this.jtMajors.setRowSorter(sorter);
+        
+        this.jScrollPane1.setViewportView(this.jtMajors);
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,33 +64,111 @@ public class ReportGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonPanel1 = new view.ButtonPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtMajors = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jCourses = new javax.swing.JTable();
+        Sig = new javax.swing.JButton();
+        jLCourses = new javax.swing.JLabel();
+        X = new javax.swing.JButton();
+        jLMajors = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addComponent(buttonPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(159, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(394, Short.MAX_VALUE)
-                .addComponent(buttonPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71))
-        );
+        jtMajors.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jtMajors);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 73, 650, 350));
+
+        jCourses.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jCourses);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 77, 650, 350));
+
+        Sig.setText("Sig");
+        Sig.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SigActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Sig, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 460, -1, -1));
+
+        jLCourses.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLCourses.setText("Courses list");
+        getContentPane().add(jLCourses, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+
+        X.setText("X");
+        X.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                XActionPerformed(evt);
+            }
+        });
+        getContentPane().add(X, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 20, -1, -1));
+
+        jLMajors.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLMajors.setText("Majors list");
+        getContentPane().add(jLMajors, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void SigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SigActionPerformed
+        
+        if(!siguiente){
+            jtMajors.setVisible(true);
+            jLMajors.setVisible(true);
+            jCourses.setVisible(false);
+            jLCourses.setVisible(false);
+            siguiente=true;
+        }
+        if(siguiente){
+            jtMajors.setVisible(false);
+            jLMajors.setVisible(false);
+            jCourses.setVisible(true);
+            jLCourses.setVisible(true);
+            siguiente=false;
+        }
+        
+    }//GEN-LAST:event_SigActionPerformed
+
+    private void XActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XActionPerformed
+        dispose();
+    }//GEN-LAST:event_XActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private view.ButtonPanel buttonPanel1;
+    private javax.swing.JButton Sig;
+    private javax.swing.JButton X;
+    private javax.swing.JTable jCourses;
+    private javax.swing.JLabel jLCourses;
+    private javax.swing.JLabel jLMajors;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jtMajors;
     // End of variables declaration//GEN-END:variables
 }

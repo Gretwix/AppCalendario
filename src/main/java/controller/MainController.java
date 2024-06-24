@@ -36,6 +36,7 @@ public class MainController implements ActionListener {
     private MajorsController majorsController;
     private PlanController planController;
     private PlanGUI planGUI;
+    private ReportController reportController;
     
     public MainController() {
         this.mainGUI = new MainGUI();
@@ -68,6 +69,7 @@ public class MainController implements ActionListener {
                 System.out.println("Courses");
                 break;
             case "Report":
+                this.reportController=new ReportController();
                 System.out.println("Report");
                 break;
             case "Exit":

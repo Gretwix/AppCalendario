@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "carrera")
 public class Majors implements Serializable{
-
+   
   private static final long serialVersionUID = 1L;
    @Id
    @Column(name = "codigo")
