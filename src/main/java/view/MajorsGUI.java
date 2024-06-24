@@ -191,11 +191,6 @@ public void showTable(boolean show) {
         jLabel5 = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         btnReport = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -212,87 +207,45 @@ public void showTable(boolean show) {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(buttonPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 660, -1, -1));
+        getContentPane().add(buttonPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 548, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
         jLabel1.setText("Code:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 93, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
         jLabel2.setText("Description:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 224, -1, -1));
+        getContentPane().add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 90, 181, -1));
 
-        txtCode.setBackground(new java.awt.Color(235, 239, 255));
-        txtCode.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtCode.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(101, 110, 211), 3, true));
-        getContentPane().add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 310, 30));
-
-        txaDescrpition.setBackground(new java.awt.Color(235, 239, 255));
         txaDescrpition.setColumns(20);
-        txaDescrpition.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txaDescrpition.setRows(5);
-        txaDescrpition.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(101, 110, 211), 3, true));
         jScrollPane1.setViewportView(txaDescrpition);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 310, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 224, -1, 72));
 
-        jLabel3.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
         jLabel3.setText("Profile:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 343, -1, -1));
 
-        txaProfile.setBackground(new java.awt.Color(235, 239, 255));
         txaProfile.setColumns(20);
-        txaProfile.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txaProfile.setRows(5);
-        txaProfile.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(101, 110, 211), 3, true));
         jScrollPane2.setViewportView(txaProfile);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 310, 120));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 343, -1, 70));
 
-        jLabel4.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
         jLabel4.setText("Market:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 480, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 450, -1, -1));
 
-        txaMarket.setBackground(new java.awt.Color(235, 239, 255));
         txaMarket.setColumns(20);
-        txaMarket.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txaMarket.setRows(5);
-        txaMarket.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(101, 110, 211), 3, true));
         jScrollPane3.setViewportView(txaMarket);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 310, 120));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 450, -1, 67));
 
-        jLabel5.setFont(new java.awt.Font("Corbel Light", 1, 14)); // NOI18N
         jLabel5.setText("Name:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 161, -1, -1));
+        getContentPane().add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 158, 181, -1));
 
-        txtName.setBackground(new java.awt.Color(235, 239, 255));
-        txtName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(101, 110, 211), 3, true));
-        getContentPane().add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 310, 30));
-
-        btnReport.setBackground(new java.awt.Color(101, 110, 211));
-        btnReport.setFont(new java.awt.Font("Corbel", 1, 15)); // NOI18N
-        btnReport.setForeground(new java.awt.Color(255, 255, 255));
         btnReport.setText("Report");
-        getContentPane().add(btnReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 720, 80, 30));
-
-        jLabel10.setFont(new java.awt.Font("Corbel", 1, 18)); // NOI18N
-        jLabel10.setText("Majors");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 100, 30));
-
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Rectangle.png"))); // NOI18N
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 100, -1));
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Rectangle 2.png"))); // NOI18N
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 140, -1));
-
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Other 07reg.png"))); // NOI18N
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 370, 250, -1));
-
-        jLabel9.setBackground(new java.awt.Color(235, 239, 255));
-        jLabel9.setOpaque(true);
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -30, 690, 820));
+        getContentPane().add(btnReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 610, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -303,15 +256,10 @@ public void showTable(boolean show) {
     private javax.swing.JButton btnReport;
     private view.ButtonPanel buttonPanel1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
